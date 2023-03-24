@@ -19,6 +19,15 @@ type Group {
     groupName: String!
     members: [User]
 }
+
+type Query {
+    "Gets logged in user"
+    currentUser: User
+    "Gets another user's profile"
+    getOneUser(userID: ID!): User
+    "Gets all users"
+    getAllUsers: [User]
+}
 `;
 
 export default typeDefs;
