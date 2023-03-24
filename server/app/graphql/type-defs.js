@@ -40,6 +40,10 @@ type Mutation {
     createUser(email: String!, username: String!, password: String!): Auth
     "Logs in an existing user"
     login(email: String!, password: String!): Auth
+    "Creates a new group"
+    createGroup(groupName: String!): Group
+    "Add members to a group"
+    addMember(userID: ID!): Group
 }
 `;
 
