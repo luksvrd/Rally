@@ -44,6 +44,10 @@ type Mutation {
     createGroup(groupName: String!): Group
     "Add members to a group"
     addMember(userID: ID!): Group
+    "Add a new habit for a logged in user"
+    addHabit(habitName: String!): User
+    "Remove a habit for a logged in user"
+    removeHabit(habitID: ID!): User
 }
 `;
 
