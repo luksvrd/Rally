@@ -12,6 +12,9 @@ type Habit {
     habitName: String!
     dayStreak: INT
     longestStreak: INT
+    "The user who is keeping track of this habit"
+    # Might need to change this into an array of user IDs if multiple people have the same habit
+    userID: ID!
 }
 
 type Group {
