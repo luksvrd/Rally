@@ -20,6 +20,12 @@ type Group {
     members: [User]
 }
 
+type Auth {
+    "Returns JWT and user info"
+    token: ID!
+    user: User
+}
+
 type Query {
     "Gets logged in user"
     currentUser: User
@@ -27,6 +33,13 @@ type Query {
     getOneUser(userID: ID!): User
     "Gets all users"
     getAllUsers: [User]
+}
+
+type Mutation {
+    "Creates a new user"
+    createUser(email: String!, username: String!, password: String!): Auth
+    "Logs in an existing user"
+    login(email: String!, password: String!): Auth
 }
 `;
 
