@@ -27,6 +27,10 @@ const resolvers = {
       const token = await userController.authenticateUser(username, password);
       return { token };
     },
+    async updateUser(_, { userId, userData }, { user }) {
+      if (!user) handleNoUser("You must be logged in");
+      return await userController.updateUser(userId, userData);
+    },
     async addHabit(_, { userId, habitName }, { user }) {
       if (!user) handleNoUser("You must be logged in");
       return await userController.addHabit(userId, habitName);
