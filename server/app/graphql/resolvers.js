@@ -17,6 +17,21 @@ const resolvers = {
       return await userController.index();
     },
   },
+
+  Mutation: {
+    async createUser(_, { user }) {
+      const token = await userController.createUser(user);
+      return { token };
+    },
+    async login(_, { username, password }) {
+      const token = await userController.authenticateUser(username, password);
+      return { token };
+    },
+    async addHabit(_, { userId, habitName }, { user }) {
+      if (!user) handleNoUser("You must be logged in");
+      return await userController.addHabit(userId, habitName);
+    },
+  },
 };
 
 export default resolvers;
