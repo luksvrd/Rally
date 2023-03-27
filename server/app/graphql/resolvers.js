@@ -31,6 +31,8 @@ const resolvers = {
       if (!user) handleNoUser("You must be logged in");
       return await userController.addHabit(userId, habitName);
     },
+    // TODO: Will need to fix this - update all habit data instead of just name
+    // Maybe make an input typedef
     async updateHabit(_, { userId, habitId, habitName }, { user }) {
       if (!user) handleNoUser("You must be logged in");
       return await userController.updateHabit(userId, habitId, habitName);
