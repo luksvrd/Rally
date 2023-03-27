@@ -54,7 +54,7 @@ type Mutation {
     "Creates a new user"
     createUser(email: String!, username: String!, password: String!): Auth
     "Logs in an existing user"
-    login(email: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
     "Updates a user's login info"
     updateUser(userId: ID!, userData: UserInput!): User
     "Creates a new group"
