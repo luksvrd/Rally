@@ -7,6 +7,12 @@ type User {
     habits: [Habit]
 }
 
+input UserInput {
+    username: String!
+    email: String!
+    password: String!
+}
+
 type Habit {
     habitId: ID!
     habitName: String!
@@ -49,6 +55,8 @@ type Mutation {
     createUser(email: String!, username: String!, password: String!): Auth
     "Logs in an existing user"
     login(email: String!, password: String!): Auth
+    "Updates a user's login info"
+    updateUser(userId: ID!, userData: UserInput!): User
     "Creates a new group"
     createGroup(groupName: String!): Group
     "Add members to a group"
