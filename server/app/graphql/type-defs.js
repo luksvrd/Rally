@@ -14,7 +14,7 @@ type Habit {
     longestStreak: INT
     "The user who is keeping track of this habit"
     # Might need to change this into an array of user IDs if multiple people have the same habit
-    userID: ID!
+    userId: ID!
 }
 
 type Group {
@@ -48,9 +48,11 @@ type Mutation {
     "Add members to a group"
     addMember(userId: ID!): Group
     "Add a new habit for a logged in user"
-    addHabit(habitName: String!): User
+    addHabit(userId: ID!, habitName: String!): User
+    "Update a habit for a logged in user"
+    updateHabit(userId: ID!, habitName: String!): User
     "Remove a habit for a logged in user"
-    removeHabit(habitId: ID!): User
+    removeHabit(userId: ID!, habitId: ID!): User
 }
 `;
 
