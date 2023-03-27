@@ -8,7 +8,7 @@ type User {
 }
 
 type Habit {
-    habitID: ID!
+    habitId: ID!
     habitName: String!
     dayStreak: INT
     longestStreak: INT
@@ -18,7 +18,7 @@ type Habit {
 }
 
 type Group {
-    groupID: ID!
+    groupId: ID!
     groupName: String!
     members: [User]
 }
@@ -33,7 +33,7 @@ type Query {
     "Gets logged in user"
     currentUser: User
     "Gets another user's profile"
-    getOneUser(userID: ID!): User
+    getOneUser(userId: ID!): User
     "Gets all users"
     getAllUsers: [User]
 }
@@ -46,11 +46,11 @@ type Mutation {
     "Creates a new group"
     createGroup(groupName: String!): Group
     "Add members to a group"
-    addMember(userID: ID!): Group
+    addMember(userId: ID!): Group
     "Add a new habit for a logged in user"
     addHabit(habitName: String!): User
     "Remove a habit for a logged in user"
-    removeHabit(habitID: ID!): User
+    removeHabit(habitId: ID!): User
 }
 `;
 
