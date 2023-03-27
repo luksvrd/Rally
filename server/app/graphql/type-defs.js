@@ -17,6 +17,12 @@ type Habit {
     userId: ID!
 }
 
+input HabitInput {
+    habitName: String
+    dayStreak: INT
+    longestStreak: INT
+}
+
 type Group {
     groupId: ID!
     groupName: String!
@@ -50,7 +56,7 @@ type Mutation {
     "Add a new habit for a logged in user"
     addHabit(userId: ID!, habitName: String!): User
     "Update a habit for a logged in user"
-    updateHabit(userId: ID!, habitId: ID!, habitName: String!): User
+    updateHabit(userId: ID!, habitId: ID!, habitData: HabitInput!): User
     "Remove a habit for a logged in user"
     removeHabit(userId: ID!, habitId: ID!): User
 }
