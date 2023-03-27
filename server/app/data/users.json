@@ -1,0 +1,87 @@
+[
+  {
+    "username": "johndoe",
+    "habits": [
+      {
+        "name": "Read 10 pages daily",
+        "completedDates": ["2023-03-20", "2023-03-23"]
+      },
+      {
+        "name": "Drink 8 glasses of water daily",
+        "completedDates": ["2023-03-21"]
+      },
+      {
+        "name": "Exercise for 30 minutes daily",
+        "completedDates": []
+      }
+    ]
+  },
+  {
+    "username": "janedoe",
+    "habits": [
+      {
+        "name": "Read 10 pages daily",
+        "completedDates": ["2023-03-21", "2023-03-23"]
+      },
+      {
+        "name": "Write in a journal daily",
+        "completedDates": ["2023-03-21", "2023-03-22", "2023-03-23"]
+      },
+      {
+        "name": "Connect with friends and family",
+        "completedDates": ["2023-03-20", "2023-03-21", "2023-03-23"]
+      }
+    ]
+  },
+  {
+    "username": "alice",
+    "habits": [
+      {
+        "name": "Drink 8 glasses of water daily",
+        "completedDates": ["2023-03-20", "2023-03-21", "2023-03-23"]
+      },
+      {
+        "name": "Meditate for 10 minutes daily",
+        "completedDates": ["2023-03-22", "2023-03-23"]
+      },
+      {
+        "name": "Connect with friends and family",
+        "completedDates": ["2023-03-21", "2023-03-23"]
+      }
+    ]
+  },
+  {
+    "username": "bob",
+    "habits": [
+      {
+        "name": "Write in a journal daily",
+        "completedDates": ["2023-03-21", "2023-03-22"]
+      },
+      {
+        "name": "Learn a new skill or hobby",
+        "completedDates": ["2023-03-22", "2023-03-23"]
+      },
+      {
+        "name": "Eat a healthy breakfast",
+        "completedDates": ["2023-03-21", "2023-03-22", "2023-03-23"]
+      }
+    ]
+  },
+  {
+    "username": "charlie",
+    "habits": [
+      {
+        "name": "Exercise for 30 minutes daily",
+        "completedDates": ["2023-03-21"]
+      },
+      {
+        "name": "Meditate for 10 minutes daily",
+        "completedDates": ["2023-03-20", "2023-03-21"]
+      },
+      {
+        "name": "Learn a new skill or hobby",
+        "completedDates": []
+      }
+    ]
+  }
+]

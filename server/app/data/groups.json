@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Reading Group",
+    "habit": "Read 10 pages daily",
+    "members": ["johndoe", "janedoe", "alice", "bob"]
+  },
+  {
+    "name": "Water Drinking Group",
+    "habit": "Drink 8 glasses of water daily",
+    "members": ["johndoe", "alice", "bob"]
+  },
+  {
+    "name": "Exercise Group",
+    "habit": "Exercise for 30 minutes daily",
+    "members": ["janedoe", "alice", "charlie"]
+  },
+  {
+    "name": "Meditation Group",
+    "habit": "Meditate for 10 minutes daily",
+    "members": ["johndoe", "alice", "charlie"]
+  },
+  {
+    "name": "Journaling Group",
+    "habit": "Write in a journal daily",
+    "members": ["janedoe", "bob", "charlie"]
+  },
+  {
+    "name": "Gratitude Group",
+    "habit": "Practice gratitude daily",
+    "members": ["johndoe", "janedoe", "alice"]
+  },
+  {
+    "name": "Skill Learning Group",
+    "habit": "Learn a new skill or hobby",
+    "members": ["johndoe", "bob", "charlie"]
+  },
+  {
+    "name": "Sleep Group",
+    "habit": "Get enough sleep",
+    "members": ["janedoe", "bob", "charlie"]
+  },
+  {
+    "name": "Breakfast Group",
+    "habit": "Eat a healthy breakfast",
+    "members": ["johndoe", "janedoe", "bob"]
+  },
+  {
+    "name": "Social Group",
+    "habit": "Connect with friends and family",
+    "members": ["johndoe", "janedoe", "alice", "charlie"]
+  }
+]
