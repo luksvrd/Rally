@@ -31,6 +31,10 @@ const resolvers = {
       if (!user) handleNoUser("You must be logged in");
       return await userController.addHabit(userId, habitName);
     },
+    async updateHabit(_, { userId, habitId, habitName }, { user }) {
+      if (!user) handleNoUser("You must be logged in");
+      return await userController.updateHabit(userId, habitId, habitName);
+    },
   },
 };
 
