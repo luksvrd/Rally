@@ -15,19 +15,19 @@ input UserInput {
 }
 
 type Habit {
-    habitId: ID!
-    habitName: String!
-    dayStreak: Int
-    longestStreak: Int
+    habitId: ID
+    name: String!
+    frequency: Int
+    startDate: String
     "The user who is keeping track of this habit"
     # Might need to change this into an array of user IDs if multiple people have the same habit
-    userId: ID!
+    userId: ID
 }
 
 input HabitInput {
-    habitName: String
-    dayStreak: Int
-    longestStreak: Int
+    name: String
+    frequency: Int
+    startDate: String
 }
 
 type Group {
@@ -53,7 +53,7 @@ type Query {
 
 type Mutation {
     "Creates a new user"
-    createUser(email: String!, username: String!, password: String!): Auth
+    createUser(userData: UserInput!): Auth
     "Logs in an existing user"
     login(username: String!, password: String!): Auth
     "Updates a user's login info"
@@ -65,7 +65,7 @@ type Mutation {
     "Remove a member from a group"
     removeMember(groupId: ID!, userId: ID!): Group
     "Add a new habit for a logged in user"
-    addHabit(userId: ID!, habitName: String!): User
+    addHabit(userId: ID!, habitData: HabitInput): User
     "Update a habit for a logged in user"
     updateHabit(userId: ID!, habitId: ID!, habitData: HabitInput!): User
     "Remove a habit for a logged in user"
