@@ -17,8 +17,8 @@ input UserInput {
 type Habit {
     habitId: ID!
     habitName: String!
-    dayStreak: INT
-    longestStreak: INT
+    dayStreak: Int
+    longestStreak: Int
     "The user who is keeping track of this habit"
     # Might need to change this into an array of user IDs if multiple people have the same habit
     userId: ID!
@@ -26,8 +26,8 @@ type Habit {
 
 input HabitInput {
     habitName: String
-    dayStreak: INT
-    longestStreak: INT
+    dayStreak: Int
+    longestStreak: Int
 }
 
 type Group {
