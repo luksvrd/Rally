@@ -7,7 +7,7 @@ export default function LoginRegister() {
   return (
     <main>
       <h2 className="text-center">
-        {isRegistering ? "Register a New Account" : "Login 2 Ur Account"}
+        {isRegistering ? "Register a New Account" : "Login Account"}
       </h2>
       <form className="flex flex-col items-center gap-y-2 px-4">
         <Input
