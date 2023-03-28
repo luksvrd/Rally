@@ -19,8 +19,8 @@ const resolvers = {
   },
 
   Mutation: {
-    async createUser(_, { user }) {
-      const token = await userController.createUser(user);
+    async createUser(_, { userData }) {
+      const token = await userController.createUser(userData);
       return { token };
     },
     async login(_, { username, password }) {
