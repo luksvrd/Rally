@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 import config from "../config.js";
 import { encodeToken, handleError } from "../utils.js";
 
