@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import { model, Schema } from "mongoose";
 import config from "../config.js";
 import { encodeToken, handleError } from "../utils.js";
+import { HabitSchema } from "./habit.js";
 
 const UserSchema = new Schema(
   {
@@ -14,13 +15,7 @@ const UserSchema = new Schema(
     },
     password: { type: String, required: true },
 
-    habits: [
-      {
-        name: { type: String, required: true },
-        frequency: { type: Number, required: true },
-        startDate: { type: Date, required: true },
-      },
-    ],
+    habits: [ HabitSchema],
   },
   {
     versionKey: false,
