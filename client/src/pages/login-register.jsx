@@ -3,7 +3,6 @@ import { Input } from "../components/form";
 
 export default function LoginRegister() {
   const [isRegistering, setIsRegistering] = useState(false);
-
   return (
     <main>
       <h2 className="text-center">
@@ -17,6 +16,17 @@ export default function LoginRegister() {
           placeholder="Enter your username"
           required
         />
+        {isRegistering ? (
+          <Input
+            type="text"
+            label="Email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        ) : (
+          <></>
+        )}
         <Input
           type="password"
           label="Password"
