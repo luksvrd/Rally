@@ -3,12 +3,21 @@ import { Input } from "../components/form";
 
 export default function LoginRegister() {
   const [isRegistering, setIsRegistering] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // TODO: handle login
+  };
+
   return (
     <main>
       <h2 className="text-center">
         {isRegistering ? "Register a New Account" : "Login Account"}
       </h2>
-      <form className="flex flex-col items-center gap-y-2 px-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center gap-y-2 px-4"
+      >
         <Input
           type="text"
           label="Username"
