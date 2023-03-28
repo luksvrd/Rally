@@ -7,6 +7,8 @@ export default function LoginRegister() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // TODO: handle login
+    const fd = new FormData(event.target);
+    const submission = Object.fromEntries(fd);
   };
 
   return (
