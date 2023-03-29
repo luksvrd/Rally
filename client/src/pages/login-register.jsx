@@ -26,7 +26,7 @@ export default function LoginRegister() {
     if (isRegistering) {
       register({ variables: { userData: submission } });
     } else {
-      login({ variables: { user: submission } });
+      login({ variables: submission });
     }
   };
 
