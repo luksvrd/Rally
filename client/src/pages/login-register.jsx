@@ -1,14 +1,24 @@
+import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { Input } from "../components/form";
+import { LOGIN, REGISTER } from "../schema/mutations";
 
 export default function LoginRegister() {
   const [isRegistering, setIsRegistering] = useState(false);
 
+  const [register] = useMutation(REGISTER);
+
+  const [login] = useMutation(LOGIN);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // TODO: handle login
     const fd = new FormData(event.target);
     const submission = Object.fromEntries(fd);
+    if (isRegistering) {
+      register({ variables: { user: submission } });
+    } else {
+      login({ variables: { user: submission } });
+    }
   };
 
   return (
