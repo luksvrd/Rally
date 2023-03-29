@@ -15,7 +15,7 @@ input UserInput {
 }
 
 type Habit {
-    habitId: ID
+    id: ID
     name: String!
     frequency: Int
     startDate: String
@@ -31,7 +31,7 @@ input HabitInput {
 }
 
 type Group {
-    groupId: ID!
+    id: ID!
     groupName: String!
     members: [User]
 }
