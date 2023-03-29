@@ -22,10 +22,6 @@ const userController = {
     return User.findById(userId);
   },
 
-  async updateUser(userId, updateData) {
-    return User.findByIdAndUpdate(userId, updateData, { new: true });
-  },
-
   async deleteUser(userId) {
     return User.findByIdAndDelete(userId);
   },
