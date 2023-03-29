@@ -32,8 +32,14 @@ input HabitInput {
 
 type Group {
     id: ID!
-    groupName: String!
+    name: String!
+    description: String
     members: [User]
+}
+
+input GroupInput {
+    name: String!
+    description: String
 }
 
 type Auth {
@@ -61,7 +67,7 @@ type Mutation {
     "Updates a user's login info"
     updateUser(userId: ID!, userData: UserInput!): User
     "Creates a new group"
-    createGroup(groupName: String!): Group
+    createGroup(groupData: GroupInput, userId: ID!): Group
     "Deletes a group"
     deleteGroup(groupId: ID!): Group
     "Add a member to a group"
