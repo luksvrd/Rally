@@ -41,9 +41,9 @@ const userController = {
 
   async deleteHabit(userId, habitId) {
     const user = await User.findById(userId);
-    user.habits.id(habitId).remove();
+    user.habits.pull(habitId);
     return user.save();
-  }
+  },
 };
 
 export default userController;
