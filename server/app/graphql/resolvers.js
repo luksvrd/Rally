@@ -1,4 +1,4 @@
-import userController from "../user/controller.js";
+import userController from "../user/userController.js";
 import { handleError } from "../utils.js";
 
 function handleNoUser(msg) {
