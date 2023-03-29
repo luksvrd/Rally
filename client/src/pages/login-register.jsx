@@ -6,16 +6,25 @@ import { LOGIN, REGISTER } from "../schema/mutations";
 export default function LoginRegister() {
   const [isRegistering, setIsRegistering] = useState(false);
 
-  const [register] = useMutation(REGISTER);
+  const [register] = useMutation(REGISTER, {
+    onCompleted(data) {
+      localStorage.setItem("token", data.login.token);
+    },
+  });
 
-  const [login] = useMutation(LOGIN);
+  const [login] = useMutation(LOGIN, {
+    onCompleted(data) {
+      localStorage.setItem("token", data.login.token);
+    },
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const fd = new FormData(event.target);
     const submission = Object.fromEntries(fd);
+    console.log(submission);
     if (isRegistering) {
-      register({ variables: { user: submission } });
+      register({ variables: { userData: submission } });
     } else {
       login({ variables: { user: submission } });
     }
@@ -30,13 +39,6 @@ export default function LoginRegister() {
         onSubmit={handleSubmit}
         className="flex flex-col items-center gap-y-2 px-4"
       >
-        <Input
-          type="text"
-          label="Username"
-          id="username"
-          placeholder="Enter your username"
-          required
-        />
         {isRegistering ? (
           <Input
             type="text"
@@ -48,6 +50,13 @@ export default function LoginRegister() {
         ) : (
           <></>
         )}
+        <Input
+          type="text"
+          label="Username"
+          id="username"
+          placeholder="Enter your username"
+          required
+        />
         <Input
           type="password"
           label="Password"
