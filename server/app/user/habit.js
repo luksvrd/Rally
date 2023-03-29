@@ -1,14 +1,14 @@
 import { Schema } from "mongoose";
 
-const HabitSchema = new Schema(
+export const HabitSchema = new Schema(
   {
-    name: { type: String, required: true },
-    frequency: { type: Number, required: true },
-    startDate: { type: Date, required: true },
+    title: { type: String, required: true},
+    description: { type: String},
+    frequency: {type: Number, default: 1},
+    streak: {type: Boolean, default: false},
+    completed: {type: Schema.Types.Object.Id, ref: "Group"},
   },
   {
-    _id: false
+    versionKey: false,
   }
 );
-
-export { HabitSchema };
