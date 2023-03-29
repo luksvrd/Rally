@@ -49,6 +49,8 @@ type Query {
     getOneUser(userId: ID!): User
     "Gets all users"
     getAllUsers: [User]
+    "Gets one group by id"
+    getOneGroup(groupId: ID!): Group
 }
 
 type Mutation {
@@ -60,6 +62,8 @@ type Mutation {
     updateUser(userId: ID!, userData: UserInput!): User
     "Creates a new group"
     createGroup(groupName: String!): Group
+    "Deletes a group"
+    deleteGroup(groupId: ID!): Group
     "Add a member to a group"
     addMember(groupId: ID!, userId: ID!): Group
     "Remove a member from a group"
