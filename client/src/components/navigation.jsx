@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function Navigation() {
   return (
-    <nav className="bg-gray-700">
-      <ul className="flex justify-center gap-x-8 p-4 text-lg">
+    <nav className="bg-transparent">
+      <ul className="flex justify-between text-light-grey">
         <li>
           <Link to="/">Home</Link>
         </li>
