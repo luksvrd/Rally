@@ -1,4 +1,5 @@
-import userController from "../user/controller.js";
+import groupController from "../group/groupController.js";
+import userController from "../user/userController.js";
 import { handleError } from "../utils.js";
 
 function handleNoUser(msg) {
@@ -15,6 +16,9 @@ const resolvers = {
     },
     async getAllUsers() {
       return await userController.index();
+    },
+    async getOneGroup(_, { groupId }) {
+      return await groupController.getGroupById(groupId);
     },
   },
 
@@ -42,6 +46,9 @@ const resolvers = {
     async removeHabit(_, { userId, habitId }, { user }) {
       if (!user) handleNoUser("You must be logged in");
       return await userController.deleteHabit(userId, habitId);
+    },
+    async createGroup(_, { groupData, userId }) {
+      return await groupController.createGroup(groupData, userId);
     },
   },
 };
