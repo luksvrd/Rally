@@ -1,15 +1,55 @@
+import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { Input } from "../components/form";
+import { LOGIN, REGISTER } from "../schema/mutations";
 
 export default function LoginRegister() {
   const [isRegistering, setIsRegistering] = useState(false);
 
+  const [register] = useMutation(REGISTER, {
+    onCompleted(data) {
+      localStorage.setItem("token", data.login.token);
+    },
+  });
+
+  const [login] = useMutation(LOGIN, {
+    onCompleted(data) {
+      localStorage.setItem("token", data.login.token);
+    },
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const fd = new FormData(event.target);
+    const submission = Object.fromEntries(fd);
+    console.log(submission);
+    if (isRegistering) {
+      register({ variables: { userData: submission } });
+    } else {
+      login({ variables: submission });
+    }
+  };
+
   return (
     <main>
       <h2 className="text-center">
-        {isRegistering ? "Register a New Account" : "Login 2 Ur Account"}
+        {isRegistering ? "Register a New Account" : "Login Account"}
       </h2>
-      <form className="flex flex-col items-center gap-y-2 px-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center gap-y-2 px-4"
+      >
+        {isRegistering ? (
+          <Input
+            type="text"
+            label="Email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        ) : (
+          <></>
+        )}
         <Input
           type="text"
           label="Username"
