@@ -18,3 +18,12 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const CREATEGROUP = gql`
+  mutation Mutation($userId: ID!) {
+    createGroup(userId: $userId) {
+      name
+      description
+    }
+  }
+`;
