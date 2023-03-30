@@ -3,7 +3,6 @@ import Group from "./group.js";
 
 const groupController = {
   async createGroup(groupData, userId) {
-    console.log(groupData, userId);
     try {
       const user = await User.findById(userId);
       if (!user) {
