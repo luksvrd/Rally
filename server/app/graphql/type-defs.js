@@ -15,25 +15,31 @@ input UserInput {
 }
 
 type Habit {
-    habitId: ID!
-    habitName: String!
-    dayStreak: Int
-    longestStreak: Int
+    id: ID
+    name: String!
+    frequency: Int
+    startDate: String
     "The user who is keeping track of this habit"
     # Might need to change this into an array of user IDs if multiple people have the same habit
-    userId: ID!
+    userId: ID
 }
 
 input HabitInput {
-    habitName: String
-    dayStreak: Int
-    longestStreak: Int
+    name: String
+    frequency: Int
+    startDate: String
 }
 
 type Group {
-    groupId: ID!
-    groupName: String!
+    id: ID!
+    name: String!
+    description: String
     members: [User]
+}
+
+input GroupInput {
+    name: String!
+    description: String
 }
 
 type Auth {
@@ -49,23 +55,27 @@ type Query {
     getOneUser(userId: ID!): User
     "Gets all users"
     getAllUsers: [User]
+    "Gets one group by id"
+    getOneGroup(groupId: ID!): Group
 }
 
 type Mutation {
     "Creates a new user"
-    createUser(email: String!, username: String!, password: String!): Auth
+    createUser(userData: UserInput!): Auth
     "Logs in an existing user"
     login(username: String!, password: String!): Auth
     "Updates a user's login info"
     updateUser(userId: ID!, userData: UserInput!): User
     "Creates a new group"
-    createGroup(groupName: String!): Group
+    createGroup(groupData: GroupInput, userId: ID!): Group
+    "Deletes a group"
+    deleteGroup(groupId: ID!): Group
     "Add a member to a group"
     addMember(groupId: ID!, userId: ID!): Group
     "Remove a member from a group"
     removeMember(groupId: ID!, userId: ID!): Group
     "Add a new habit for a logged in user"
-    addHabit(userId: ID!, habitName: String!): User
+    addHabit(userId: ID!, habitData: HabitInput): User
     "Update a habit for a logged in user"
     updateHabit(userId: ID!, habitId: ID!, habitData: HabitInput!): User
     "Remove a habit for a logged in user"

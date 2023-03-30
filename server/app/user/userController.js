@@ -22,10 +22,6 @@ const userController = {
     return User.findById(userId);
   },
 
-  async updateUser(userId, updateData) {
-    return User.findByIdAndUpdate(userId, updateData, { new: true });
-  },
-
   async deleteUser(userId) {
     return User.findByIdAndDelete(userId);
   },
@@ -45,9 +41,9 @@ const userController = {
 
   async deleteHabit(userId, habitId) {
     const user = await User.findById(userId);
-    user.habits.id(habitId).remove();
+    user.habits.pull(habitId);
     return user.save();
-  }
+  },
 };
 
 export default userController;

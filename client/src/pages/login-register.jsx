@@ -1,21 +1,44 @@
+import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { Input } from "../components/form";
+import { LOGIN, REGISTER } from "../schema/mutations";
 
 export default function LoginRegister() {
   const [isRegistering, setIsRegistering] = useState(false);
+
+  const [register] = useMutation(REGISTER, {
+    onCompleted(data) {
+      localStorage.setItem("token", data.login.token);
+    },
+  });
+
+  const [login] = useMutation(LOGIN, {
+    onCompleted(data) {
+      localStorage.setItem("token", data.login.token);
+    },
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const fd = new FormData(event.target);
+    const submission = Object.fromEntries(fd);
+    console.log(submission);
+    if (isRegistering) {
+      register({ variables: { userData: submission } });
+    } else {
+      login({ variables: submission });
+    }
+  };
+
   return (
     <main className=" mx-9 my-20 rounded-md bg-white bg-opacity-25 py-2">
       <h2 className="py-5 text-center text-lg font-bold">
         {isRegistering ? "Register a New Account" : "Log in to your Account"}
       </h2>
-      <form className="flex flex-col items-center gap-y-3 px-4">
-        <Input
-          type="text"
-          label="Username"
-          id="username"
-          placeholder="Enter your username"
-          required
-        />
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center gap-y-2 px-4"
+      >
         {isRegistering ? (
           <Input
             type="text"
@@ -27,6 +50,13 @@ export default function LoginRegister() {
         ) : (
           <></>
         )}
+        <Input
+          type="text"
+          label="Username"
+          id="username"
+          placeholder="Enter your username"
+          required
+        />
         <Input
           type="password"
           label="Password"
