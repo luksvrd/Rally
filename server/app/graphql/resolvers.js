@@ -50,6 +50,9 @@ const resolvers = {
     async createGroup(_, { groupData, userId }) {
       return await groupController.createGroup(groupData, userId);
     },
+    async deleteGroup(_, { groupId }) {
+      return await groupController.deleteGroup(groupId);
+    },
   },
 };
 
