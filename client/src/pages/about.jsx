@@ -5,7 +5,7 @@ export default function About() {
       <p className="">
         Rally is a group-oriented goal tracking platform. It is designed to help
         you and your group members stay on top of your shared goals and keep
-        each other motivated through friendly competition.
+        each other motivated through monthly competitions.
       </p>
     </main>
   );
