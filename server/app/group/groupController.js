@@ -33,7 +33,7 @@ const groupController = {
     const user = await User.findById(userId);
     group.members.push(user);
     await group.save();
-    return group;
+    return await Group.populate(group, { path: "members" });
   },
 
   async removeMember(groupId, userId) {
@@ -41,7 +41,7 @@ const groupController = {
     const user = await User.findById(userId);
     group.members.pull(user);
     await group.save();
-    return group;
+    return await Group.populate(group, { path: "members" });
   },
 };
 
