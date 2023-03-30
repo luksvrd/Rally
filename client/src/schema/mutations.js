@@ -20,8 +20,8 @@ export const LOGIN = gql`
 `;
 
 export const CREATEGROUP = gql`
-  mutation Mutation($userId: ID!) {
-    createGroup(userId: $userId) {
+  mutation Mutation($userId: ID!, $groupData: GroupInput) {
+    createGroup(userId: $userId, groupData: $groupData) {
       name
       description
     }
