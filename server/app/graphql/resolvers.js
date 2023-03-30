@@ -53,6 +53,12 @@ const resolvers = {
     async deleteGroup(_, { groupId }) {
       return await groupController.deleteGroup(groupId);
     },
+    async addMember(_, { groupId, userId }) {
+      return await groupController.addMember(groupId, userId);
+    },
+    async removeMember(_, { groupId, userId }) {
+      return await groupController.removeMember(groupId, userId);
+    },
   },
 };
 
