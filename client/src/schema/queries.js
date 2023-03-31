@@ -1,22 +1,11 @@
 import { gql } from "@apollo/client";
 
 export const CURRENT_USER = gql`
-  query CurrentUser {
+  query currentUser {
     currentUser {
       id
       username
       email
-      habits {
-        habitId
-        habitName
-        startDate
-        longestStreak
-      }
-      groups {
-        groupId
-        groupName
-        # date joined from server
-      }
     }
   }
 `;

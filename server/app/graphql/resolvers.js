@@ -8,7 +8,7 @@ function handleNoUser(msg) {
 
 const resolvers = {
   Query: {
-    currentUser(_, __, { user }) {
+    async currentUser(_, __, { user }) {
       return user;
     },
     async getOneUser(_, { userId }) {
