@@ -8,7 +8,7 @@ export default function LoginRegister() {
 
   const [register] = useMutation(REGISTER, {
     onCompleted(data) {
-      localStorage.setItem("token", data.login.token);
+      localStorage.setItem("token", data.createUser.token);
     },
   });
 

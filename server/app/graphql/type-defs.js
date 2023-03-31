@@ -2,8 +2,8 @@ const typeDefs = `
 type User {
     id: ID!
     username: String!
-    email: String!
-    password: String!
+    email: String
+    password: String
     habits: [Habit]
     groups: [Group]
 }
