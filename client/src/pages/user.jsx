@@ -29,13 +29,6 @@ export default function User() {
           </h2>
           <ul id="group-list"></ul>
         </div>
-
-        <div>
-          <h2 id="friends" className="profile-headers my-3">
-            Friends
-          </h2>
-          <ul id="friend-list"></ul>
-        </div>
       </div>
     );
 }
