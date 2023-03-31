@@ -6,3 +6,11 @@ html {
   @apply bg-gradient-to-b from-rally-purple to-rally-blue bg-fixed;
   @apply font-montserrat;
 }
+
+.profile-headers {
+  @apply text-xl;
+}
+
+.middle {
+  @apply flex flex-col items-center justify-center;
+}
