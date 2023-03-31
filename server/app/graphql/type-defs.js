@@ -1,3 +1,4 @@
+// TODO: Add docstrings to all fields and inputs!
 const typeDefs = `
 type User {
     id: ID!
@@ -17,11 +18,11 @@ input UserInput {
 type Habit {
     id: ID
     name: String!
-    frequency: Int
-    startDate: String
+    datesCompleted: [String]
     "The user who is keeping track of this habit"
     # Might need to change this into an array of user IDs if multiple people have the same habit
     userId: ID
+    streak: Int
 }
 
 input HabitInput {
@@ -80,6 +81,7 @@ type Mutation {
     updateHabit(userId: ID!, habitId: ID!, habitData: HabitInput!): User
     "Remove a habit for a logged in user"
     removeHabit(userId: ID!, habitId: ID!): User
+    addDate(userId: ID!, habitId: ID!): User
 }
 `;
 

@@ -59,6 +59,9 @@ const resolvers = {
     async removeMember(_, { groupId, userId }) {
       return await groupController.removeMember(groupId, userId);
     },
+    async addDate(_, { userId, habitId }) {
+      return await userController.addDate(userId, habitId);
+    },
   },
 };
 
