@@ -21,7 +21,7 @@ const resolvers = {
       return await groupController.getGroupById(groupId);
     },
     async getAllGroups() {
-      return await groupController.index();
+      return await groupController.getAllGroups();
     },
   },
 
