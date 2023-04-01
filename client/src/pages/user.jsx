@@ -6,6 +6,23 @@ export default function User() {
   const { loading, error, data } = useQuery(CURRENT_USER);
   console.log(data);
 
+  const habits = data?.currentUser.habits;
+  const groups = data?.currentUser.groups;
+
+  const habitListItems = habits?.map((habit) => (
+    <li key={habit._id}>
+      <h3>{habit.name}</h3>
+      <p>{habit.streak}</p>
+      <input type="checkbox" />
+    </li>
+  ));
+
+  const groupListItems = groups?.map((group) => (
+    <li key={group._id}>
+      <h3>{group.name}</h3>
+    </li>
+  ));
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   else
@@ -21,14 +38,14 @@ export default function User() {
           <h2 id="habits" className=" profile-headers my-3">
             Today's Goals
           </h2>
-          <ul id="habit-list"></ul>
+          <ul>{habitListItems}</ul>
         </div>
 
         <div>
           <h2 id="groups" className="profile-headers my-3">
             Groups
           </h2>
-          <ul id="group-list"></ul>
+          <ul>{groupListItems}</ul>
         </div>
       </div>
     );
