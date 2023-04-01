@@ -22,10 +22,8 @@ export const CURRENT_USER = gql`
 export const GET_HABITS = gql`
   query GetHabits {
     habits {
-      habitId
-      habitName
-      startDate
-      longestStreak
+      id
+      name
     }
   }
 `;
@@ -33,10 +31,10 @@ export const GET_HABITS = gql`
 export const GET_GROUPS = gql`
   query GetGroups {
     groups {
-      groupId
-      groupName
+      id
+      name
       members {
-        userId
+        id
         username
       }
     }
