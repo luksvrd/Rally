@@ -15,10 +15,13 @@ const UserSchema = new Schema(
     },
     password: { type: String, required: true },
 
-    habits: [ HabitSchema],
+    habits: [HabitSchema],
   },
   {
     versionKey: false,
+    toJSON: {
+      virtuals: true,
+    },
   }
 );
 
