@@ -20,6 +20,9 @@ const resolvers = {
     async getOneGroup(_, { groupId }) {
       return await groupController.getGroupById(groupId);
     },
+    async getAllGroups() {
+      return await groupController.getAllGroups();
+    },
   },
 
   Mutation: {
