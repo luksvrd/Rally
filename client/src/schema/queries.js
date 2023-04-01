@@ -6,6 +6,15 @@ export const CURRENT_USER = gql`
       id
       username
       email
+      habits {
+        id
+        name
+        streak
+      }
+      groups {
+        id
+        name
+      }
     }
   }
 `;
