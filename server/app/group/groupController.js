@@ -22,6 +22,10 @@ const groupController = {
     return await Group.findById(groupId).populate("members");
   },
 
+  async getAllGroups(groupId) {
+    return await Group.find();
+  },
+
   async deleteGroup(groupId) {
     const group = await Group.findByIdAndDelete(groupId);
     return groupId;

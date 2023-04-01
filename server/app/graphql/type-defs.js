@@ -58,6 +58,8 @@ type Query {
     getAllUsers: [User]
     "Gets one group by id"
     getOneGroup(groupId: ID!): Group
+    "Gets all groups"
+    getAllGroups: [Group]
 }
 
 type Mutation {
