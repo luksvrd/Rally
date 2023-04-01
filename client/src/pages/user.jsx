@@ -4,6 +4,7 @@ import { CURRENT_USER } from "../schema/queries";
 
 export default function User() {
   const { loading, error, data } = useQuery(CURRENT_USER);
+  console.log(data);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
