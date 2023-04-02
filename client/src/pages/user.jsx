@@ -12,7 +12,7 @@ export default function User(props) {
 
   const groupListItems = groups?.map((group) => (
     <li key={group._id} className="semi-t-card my-2 px-12 py-2 text-xl">
-      <Link to="/leaderboard">{group.name}</Link>
+      <Link to={`/leaderboard/${group.id}`}>{group.name}</Link>
     </li>
   ));
 
