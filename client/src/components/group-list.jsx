@@ -12,12 +12,17 @@ export default function GroupList({ currentUser }) {
   console.log(currentUser, "from groupList");
 
   const groupListItems = groups?.map((group) => (
-    <li key={group._id} className="semi-t-card my-2 px-12 py-2 text-xl">
-      <h3>{group.name}</h3>
-      <h4>{group.description}</h4>
+    <li
+      key={group._id}
+      className="semi-t-card mx-5 mb-2 flex justify-between px-2"
+    >
+      <div>
+        <h3 className="text-lg font-semibold">{group.name}</h3>
+        <h4 className="text-xs text-light-grey">{group.description}</h4>
+      </div>
       <button
         type="button"
-        className="my-2 rounded-lg border-2 border-black bg-white px-6"
+        className="my-2 rounded-lg border-2 border-black bg-white px-5 font-semibold drop-shadow-md"
         onClick={() =>
           addMember({
             variables: { groupId: group.id, userId: currentUser },
@@ -31,7 +36,7 @@ export default function GroupList({ currentUser }) {
 
   return (
     <div className="middle">
-      <h2 id="groups" className="profile-headers my-3">
+      <h2 id="groups" className="profile-headers mb-2 mt-5">
         All Groups
       </h2>
       <ul>{groupListItems}</ul>
