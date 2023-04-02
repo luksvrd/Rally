@@ -2,21 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-gray-900 text-gray-50;
-  }
-  h2 {
-    @apply my-2 text-2xl;
-  }
-
-  input {
-    @apply rounded border border-gray-300 p-2;
-  }
+html {
+  @apply bg-gradient-to-b from-rally-purple to-rally-blue bg-fixed;
+  @apply font-montserrat;
 }
 
-@layer components {
-  .button {
-    @apply rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-300;
-  }
+.profile-headers {
+  @apply text-xl font-bold;
+}
+
+.icon {
+  @apply w-2/3 drop-shadow-lg;
+}
+
+.middle {
+  @apply flex flex-col items-center justify-center;
 }

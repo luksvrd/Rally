@@ -31,9 +31,9 @@ export default function LoginRegister() {
   };
 
   return (
-    <main>
-      <h2 className="text-center">
-        {isRegistering ? "Register a New Account" : "Login Account"}
+    <main className=" mx-9 my-20 rounded-md bg-white bg-opacity-25 py-2">
+      <h2 className="py-5 text-center text-lg font-bold">
+        {isRegistering ? "Register a New Account" : "Log in to your Account"}
       </h2>
       <form
         onSubmit={handleSubmit}
@@ -66,7 +66,7 @@ export default function LoginRegister() {
         />
         <button
           type="submit"
-          className="button mt-4 bg-green-500 hover:bg-green-300"
+          className="my-2 rounded-lg border-2 border-black bg-white px-6"
         >
           {isRegistering ? "Register" : "Login"}
         </button>
@@ -75,7 +75,7 @@ export default function LoginRegister() {
           onClick={() => {
             setIsRegistering((prev) => !prev);
           }}
-          className="text-center text-sm text-gray-500 hover:text-gray-300"
+          className="text-center text-sm font-bold text-light-grey hover:scale-110"
         >
           {isRegistering ? "Already have an account?" : "Need to register?"}
         </button>
