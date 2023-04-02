@@ -1,18 +1,27 @@
 import { useMutation, useQuery } from "@apollo/client";
-// import { useState } from "react";
+import { useState } from "react";
 import { ADD_DATE } from "../schema/mutations";
 import { CURRENT_USER } from "../schema/queries";
 
 export default function Habit() {
   const { data } = useQuery(CURRENT_USER);
-  const [addDateCompleted] = useMutation(ADD_DATE);
+  const [addDateCompleted] = useMutation(ADD_DATE, {
+    refetchQueries: [{ query: CURRENT_USER }],
+  });
+  const [isChecked, setIsChecked] = useState(false);
 
   console.log(data);
 
   const habits = data?.currentUser.habits;
 
-  function handleClick() {
-    location.reload();
+  function handleCheckboxClick(habitId) {
+    addDateCompleted({
+      variables: { userId: data.currentUser.id, habitId },
+    });
+    setIsChecked((prevState) => ({
+      ...prevState,
+      [habitId]: !prevState[habitId],
+    }));
   }
 
   //   page has to reload in order to get the current user query?
@@ -27,12 +36,8 @@ export default function Habit() {
         <input
           type="checkbox"
           className="border-2 border-rally-purple checked:border-rally-blue checked:bg-rally-purple"
-          onClick={(event) => {
-            addDateCompleted({
-              variables: { userId: data.currentUser.id, habitId: habit.id },
-            });
-            handleClick();
-          }}
+          onClick={() => handleCheckboxClick(habit.id)}
+          checked={isChecked[habit.id]}
         />
       </div>
       <div className="flex">
