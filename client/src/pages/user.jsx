@@ -10,7 +10,7 @@ export default function User() {
   const groups = data?.currentUser.groups;
 
   const habitListItems = habits?.map((habit) => (
-    <li key={habit._id}>
+    <li key={habit._id} className="flex rounded-md bg-white bg-opacity-25 px-4">
       <h3>{habit.name}</h3>
       <p>{habit.streak}</p>
       <input type="checkbox" />
@@ -23,18 +23,33 @@ export default function User() {
     </li>
   ));
 
+  // add a function to update a habit when the checkbox is clicked
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   else
     return (
       <div className="middle">
         <h1 id="username" className="my-4 text-3xl">
-          {data.currentUser.username}
+          Welcome, {data.currentUser.username}
         </h1>
 
-        <div id="icons"></div>
+        <div id="icons" className="grid grid-cols-3 place-items-center">
+          <img
+            src="../src/icons/reading1st.png"
+            alt="reading"
+            className="w-2/3"
+          />
+          <img src="../src/icons/walking.png" alt="running" className="w-2/3" />
+          <img
+            src="../src/icons/meditating3rd.png"
+            alt="meditation"
+            className="w-2/3"
+          />
+          <img src="../src/icons/water2nd.png" alt="water" className="w-2/3" />
+        </div>
 
-        <div>
+        <div className="middle my-2 w-4/5">
           <h2 id="habits" className=" profile-headers my-3">
             Today's Goals
           </h2>
