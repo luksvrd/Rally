@@ -4,6 +4,11 @@ Monorepo for MERN (MongoDB, Express, React, Node) stack with Apollo GraphQL serv
 
 [Server](./server/README.md) | [Client](./client/README.md)
 
+## Known Bugs
+
+- Checking AND unchecking the habit checkbox in the user's profile will update the streak
+- Creating a group requires a refresh to see the group in the list of groups and on the user's profile
+
 ## Commits
 
 To help ensure great commit messages for this project, consider using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Here's [an extension](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) to help you do that.
