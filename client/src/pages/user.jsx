@@ -1,47 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useMutation, useQuery } from "@apollo/client";
-import { ADD_DATE } from "../schema/mutations";
+import { useQuery } from "@apollo/client";
+import Habit from "../components/habit";
 import { CURRENT_USER } from "../schema/queries";
 
-export default function User() {
+export default function User(props) {
   const { loading, error, data } = useQuery(CURRENT_USER);
-  const [addDateCompleted] = useMutation(ADD_DATE);
-  console.log(data);
+  //   console.log(data);
 
-  const habits = data?.currentUser.habits;
   const groups = data?.currentUser.groups;
-
-  const habitListItems = habits?.map((habit) => (
-    <li
-      key={habit._id}
-      className="w-100 items middle semi-t-card my-2 px-4 py-2"
-    >
-      <div className="flex">
-        <h3 className="text mx-2 font-semibold">{habit.name}</h3>
-        <input
-          type="checkbox"
-          className="border-2 border-rally-purple checked:border-rally-blue checked:bg-rally-purple"
-          onClick={() =>
-            addDateCompleted({
-              variables: { userId: data.currentUser.id, habitId: habit.id },
-            })
-          }
-        />
-      </div>
-      <div className="flex">
-        <p className="habit-streak">Current streak:</p>
-        <p className="habit-streak">{habit.streak} days</p>
-      </div>
-    </li>
-  ));
 
   const groupListItems = groups?.map((group) => (
     <li key={group._id} className="semi-t-card my-2 px-12 py-2 text-xl">
       <h3>{group.name}</h3>
     </li>
   ));
-
-  // add a function to update a habit when the checkbox is clicked
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
@@ -82,7 +54,7 @@ export default function User() {
           <h2 id="habits" className=" profile-headers mb-1 mt-3">
             Today's Goals
           </h2>
-          <ul>{habitListItems}</ul>
+          <Habit />
         </div>
 
         <div className="middle">
