@@ -8,9 +8,6 @@ export default function Navigation() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/habit">Habits</Link>
-        </li>
-        <li>
           <Link to="/user">Profile</Link>
         </li>
         <li>
