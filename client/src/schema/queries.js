@@ -30,13 +30,10 @@ export const GET_HABITS = gql`
 
 export const GET_GROUPS = gql`
   query GetAllGroups {
-    groups {
+    getAllGroups {
       id
       name
-      members {
-        id
-        username
-      }
+      description
     }
   }
 `;
