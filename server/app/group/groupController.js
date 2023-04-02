@@ -12,7 +12,7 @@ const groupController = {
       const newGroup = new Group(groupData);
       newGroup.members.push(userId);
       await newGroup.save();
-      user.groups.push(newGroup.id);
+      user.groups.push(newGroup);
       await user.save();
       const habitData = {
         name: newGroup.description,
