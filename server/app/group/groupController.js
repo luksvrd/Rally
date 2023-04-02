@@ -25,10 +25,6 @@ const groupController = {
     }
   },
 
-  async getGroups() {
-    return await Group.find().populate("members");
-  },
-
   async getGroupById(groupId) {
     return await Group.findById(groupId).populate("members");
   },
