@@ -4,9 +4,9 @@ import GroupsCard from "../components/group-card";
 import { GET_GROUPS } from "../schema/queries";
 export default function Groups() {
   const groups = useQuery(GET_GROUPS);
-  const groupData = groups.data.getAllGroups;
+  const groupData = groups?.data.getAllGroups;
 
-  console.log(groups);
+  console.log(groupData);
   return (
     <>
       <CreateGroup />
