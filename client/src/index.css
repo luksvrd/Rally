@@ -24,7 +24,7 @@ html {
 }
 
 .semi-t-card {
-  @apply rounded-md bg-white bg-opacity-30;
+  @apply rounded-md bg-white bg-opacity-30 drop-shadow-lg;
 }
 
 .checkbox {
