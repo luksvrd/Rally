@@ -11,10 +11,18 @@ html {
   @apply text-xl font-bold;
 }
 
-.icon {
+.icon-small {
   @apply w-2/3 drop-shadow-lg;
 }
 
 .middle {
   @apply flex flex-col items-center justify-center;
+}
+
+.habit-streak {
+  @apply mx-1 text-xs;
+}
+
+.semi-t-card {
+  @apply rounded-md bg-white bg-opacity-25;
 }
