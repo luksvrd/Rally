@@ -6,7 +6,7 @@ export default function Header() {
         alt="rally-logo"
         className="mx-1 w-8 rounded border"
       />
-      <h1 className="text-center font-audiowide text-3xl font-bold">RALLY</h1>
+      <h1 className="text-center font-audiowide text-4xl font-bold">RALLY</h1>
     </header>
   );
 }
