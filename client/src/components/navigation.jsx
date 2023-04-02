@@ -11,7 +11,7 @@ export default function Navigation() {
           <Link to="/habit">Habits</Link>
         </li>
         <li>
-          <Link to="/user">User</Link>
+          <Link to="/user">Profile</Link>
         </li>
         <li>
           <Link to="/groups">Groups</Link>
