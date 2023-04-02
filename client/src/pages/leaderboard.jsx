@@ -21,16 +21,17 @@ export default function Leaderboard() {
     const habitArray = members.map((member) => {
       return member.habits;
     });
-    console.log(habitArray, "habits");
+    console.log(habitArray, "habitArray");
 
-    const found = habitArray.find(
-      (element) => element.name === data.getOneGroup.description
-    );
+    const description = data.getOneGroup.description;
+
+    const found = habitArray[0].find((habit) => habit.name === description);
     console.log(found, "found");
 
     const memberListItems = members?.map((member) => (
       <li key={member.username} className="semi-t-card my-2 px-12 py-2 text-xl">
         <h3>{member.username}</h3>
+        <h3>{found.streak}</h3>
       </li>
     ));
 
