@@ -36,11 +36,13 @@ type Group {
     name: String!
     description: String
     members: [User]
+    iconFamily: String
 }
 
 input GroupInput {
     name: String!
     description: String
+    iconFamily: String
 }
 
 type Auth {

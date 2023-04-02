@@ -20,7 +20,7 @@ const userController = {
   },
 
   async getUserById(userId) {
-    const user = await User.findById(userId);
+    const user = await User.findById(userId).populate("groups");
 
     return user;
   },
