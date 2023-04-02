@@ -12,12 +12,23 @@ export default function Leaderboard() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
-  else
+  else {
+    const members = data?.getOneGroup.members;
+    console.log(members);
+
+    const memberListItems = members?.map((member) => (
+      <li key={member.username} className="semi-t-card my-2 px-12 py-2 text-xl">
+        <h3>{member.username}</h3>
+      </li>
+    ));
+
     return (
       <div className="middle">
         <h2 id="groups" className="profile-headers my-3">
           {data.getOneGroup.name}
         </h2>
+        <ul>{memberListItems}</ul>
       </div>
     );
+  }
 }
