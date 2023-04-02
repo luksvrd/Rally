@@ -26,6 +26,13 @@ export default function CreateGroup() {
         placeholder="Enter your group name"
         required
       />
+      <Input
+        type="text"
+        label="Group"
+        id="description"
+        placeholder="Group goal"
+        required
+      />
       <button
         type="submit"
         className="button mt-4 bg-green-500 hover:bg-green-300"
