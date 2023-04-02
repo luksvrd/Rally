@@ -33,10 +33,6 @@ export const GET_GROUPS = gql`
     groups {
       id
       name
-      members {
-        id
-        username
-      }
     }
   }
 `;
