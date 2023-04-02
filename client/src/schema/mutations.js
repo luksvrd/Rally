@@ -24,3 +24,16 @@ export const CREATEGROUP = gql`
     }
   }
 `;
+
+export const ADD_DATE = gql`
+  mutation AddDate($userId: ID!, $habitId: ID!) {
+    addDate(userId: $userId, habitId: $habitId) {
+      username
+      habits {
+        name
+        datesCompleted
+        streak
+      }
+    }
+  }
+`;

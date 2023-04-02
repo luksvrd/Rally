@@ -1,9 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
+import { ADD_DATE } from "../schema/mutations";
 import { CURRENT_USER } from "../schema/queries";
 
 export default function User() {
   const { loading, error, data } = useQuery(CURRENT_USER);
+  const [addDateCompleted] = useMutation(ADD_DATE);
   console.log(data);
 
   const habits = data?.currentUser.habits;
@@ -16,7 +18,15 @@ export default function User() {
     >
       <div className="flex">
         <h3 className="text mx-2 font-semibold">{habit.name}</h3>
-        <input type="checkbox" className="border-2 border-rally-blue" />
+        <input
+          type="checkbox"
+          className="border-2 border-rally-blue"
+          onClick={() =>
+            addDateCompleted({
+              variables: { userId: data.currentUser.id, habitId: habit.id },
+            })
+          }
+        />
       </div>
       <div className="just flex">
         <p className="mr-1 text-xs">Current streak:</p>
