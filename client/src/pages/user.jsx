@@ -9,6 +9,30 @@ export default function User(props) {
 
   const groups = data?.currentUser.groups;
 
+  const habitListItems = habits?.map((habit) => (
+    <li
+      key={habit._id}
+      className="w-100 items middle semi-t-card my-2 px-4 py-2"
+    >
+      <div className="flex">
+        <h3 className="text mx-2 font-semibold">{habit.name}</h3>
+        <input
+          type="checkbox"
+          className="border-2 border-rally-purple checked:border-rally-blue checked:bg-rally-purple"
+          onClick={() =>
+            addDateCompleted({
+              variables: { userId: data.currentUser.id, habitId: habit.id },
+            })
+          }
+        />
+      </div>
+      <div className="flex">
+        <p className="habit-streak">Current streak:</p>
+        <p className="habit-streak">{habit.streak} days</p>
+      </div>
+    </li>
+  ));
+  
   const groupListItems = groups?.map((group) => (
     <li key={group._id} className="semi-t-card my-2 px-12 py-2 text-xl">
       <h3>{group.name}</h3>

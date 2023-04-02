@@ -29,8 +29,8 @@ export const GET_HABITS = gql`
 `;
 
 export const GET_GROUPS = gql`
-  query Query {
-    getAllGroups {
+  query GetAllGroups {
+    groups {
       id
       name
     }
