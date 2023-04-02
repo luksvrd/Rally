@@ -29,7 +29,7 @@ const groupController = {
     return await Group.findById(groupId).populate("members");
   },
 
-  async getAllGroups(groupId) {
+  async getAllGroups() {
     return await Group.find();
   },
 
