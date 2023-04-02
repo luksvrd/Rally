@@ -14,15 +14,17 @@ export default function GroupList({ currentUser }) {
   const groupListItems = groups?.map((group) => (
     <li key={group._id} className="semi-t-card my-2 px-12 py-2 text-xl">
       <h3>{group.name}</h3>
+      <h4>{group.description}</h4>
       <button
         type="button"
+        className="my-2 rounded-lg border-2 border-black bg-white px-6"
         onClick={() =>
           addMember({
             variables: { groupId: group.id, userId: currentUser },
           })
         }
       >
-        Join group
+        Join
       </button>
     </li>
   ));
