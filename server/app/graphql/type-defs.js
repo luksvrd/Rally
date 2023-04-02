@@ -3,8 +3,8 @@ const typeDefs = `
 type User {
     id: ID!
     username: String!
-    email: String
-    password: String
+    email: String!
+    password: String!
     habits: [Habit]
     groups: [Group]
 }
@@ -44,9 +44,8 @@ input GroupInput {
 }
 
 type Auth {
-    "Returns JWT and user info"
+    "Returns JWT"
     token: ID!
-    user: User
 }
 
 type Query {
