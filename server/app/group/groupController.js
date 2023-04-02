@@ -1,4 +1,5 @@
 import User from "../user/index.js";
+import userController from "../user/userController.js";
 import Group from "./group.js";
 
 const groupController = {
@@ -11,6 +12,12 @@ const groupController = {
       const newGroup = new Group(groupData);
       newGroup.members.push(userId);
       await newGroup.save();
+      user.groups.push(newGroup);
+      await user.save();
+      const habitData = {
+        name: newGroup.description,
+      };
+      userController.addHabit(userId, habitData);
       return await Group.populate(newGroup, { path: "members" });
     } catch (error) {
       console.error(error);
@@ -22,8 +29,12 @@ const groupController = {
     return await Group.findById(groupId).populate("members");
   },
 
+  async getAllGroups(groupId) {
+    return await Group.find();
+  },
+
   async deleteGroup(groupId) {
-    const group = await Group.findByIdAndDelete(groupId);
+    await Group.findByIdAndDelete(groupId);
     return groupId;
   },
 
@@ -32,6 +43,12 @@ const groupController = {
     const user = await User.findById(userId);
     group.members.push(user);
     await group.save();
+    user.groups.push(group.id);
+    await user.save();
+    const habitData = {
+      name: group.description,
+    };
+    userController.addHabit(userId, habitData);
     return await Group.populate(group, { path: "members" });
   },
 

@@ -1,5 +1,6 @@
 import User from "./index.js";
 
+// TODO{ellen}: Remove `async`s that don't have an `await` inside of them.
 const userController = {
   async createUser(newUser) {
     try {
@@ -19,7 +20,9 @@ const userController = {
   },
 
   async getUserById(userId) {
-    return User.findById(userId);
+    const user = await User.findById(userId).populate("groups");
+
+    return user;
   },
 
   async deleteUser(userId) {
@@ -42,6 +45,18 @@ const userController = {
   async deleteHabit(userId, habitId) {
     const user = await User.findById(userId);
     user.habits.pull(habitId);
+    return user.save();
+  },
+
+  // This will increase the streak by 1
+  async addDate(userId, habitId) {
+    const user = await User.findById(userId);
+
+    // Find the habit in the user's habits array by its id
+    const habit = user.habits.id(habitId);
+
+    const date = new Date();
+    habit.datesCompleted.push(date);
     return user.save();
   },
 };

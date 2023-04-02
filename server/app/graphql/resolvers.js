@@ -9,7 +9,7 @@ function handleNoUser(msg) {
 const resolvers = {
   Query: {
     async currentUser(_, __, { user }) {
-      return user;
+      return await userController.getUserById(user.id);
     },
     async getOneUser(_, { userId }) {
       return await userController.getUserById(userId);
@@ -19,6 +19,9 @@ const resolvers = {
     },
     async getOneGroup(_, { groupId }) {
       return await groupController.getGroupById(groupId);
+    },
+    async getAllGroups() {
+      return await groupController.getAllGroups();
     },
   },
 
@@ -58,6 +61,9 @@ const resolvers = {
     },
     async removeMember(_, { groupId, userId }) {
       return await groupController.removeMember(groupId, userId);
+    },
+    async addDate(_, { userId, habitId }) {
+      return await userController.addDate(userId, habitId);
     },
   },
 };

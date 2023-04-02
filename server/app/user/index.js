@@ -15,10 +15,19 @@ const UserSchema = new Schema(
     },
     password: { type: String, required: true },
 
-    habits: [ HabitSchema],
+    habits: [HabitSchema],
+    groups: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Group",
+      },
+    ],
   },
   {
     versionKey: false,
+    toJSON: {
+      virtuals: true,
+    },
   }
 );
 

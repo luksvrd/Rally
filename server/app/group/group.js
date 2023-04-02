@@ -10,6 +10,7 @@ const GroupSchema = new Schema(
         ref: "User",
       },
     ],
+    iconFamily: { type: String },
   },
   {
     versionKey: false,

@@ -9,5 +9,3 @@ export default function Groups() {
         <GroupsCard />
       </div>
     </>
-  );
-}
