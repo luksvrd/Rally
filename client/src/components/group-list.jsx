@@ -1,16 +1,29 @@
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
+import PropTypes from "prop-types";
+import { JOIN_GROUP } from "../schema/mutations";
 import { GET_GROUPS } from "../schema/queries";
 
-export default function GroupList() {
+export default function GroupList({ currentUser }) {
   const { data } = useQuery(GET_GROUPS);
-  console.log(data, "data");
+  const [addMember] = useMutation(JOIN_GROUP);
 
   const groups = data?.getAllGroups;
-  console.log(groups, "groups");
+
+  console.log(currentUser, "from groupList");
 
   const groupListItems = groups?.map((group) => (
     <li key={group._id} className="semi-t-card my-2 px-12 py-2 text-xl">
       <h3>{group.name}</h3>
+      <button
+        type="button"
+        onClick={() =>
+          addMember({
+            variables: { groupId: group.id, userId: currentUser },
+          })
+        }
+      >
+        Join group
+      </button>
     </li>
   ));
 
@@ -23,3 +36,7 @@ export default function GroupList() {
     </div>
   );
 }
+
+GroupList.propTypes = {
+  currentUser: PropTypes.string.isRequired,
+};
