@@ -4,7 +4,7 @@ import GroupList from "../components/group-list";
 import { CURRENT_USER } from "../schema/queries";
 
 export default function Groups() {
-  const { loading, error } = useQuery(CURRENT_USER);
+  const { loading, error, data } = useQuery(CURRENT_USER);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
@@ -12,7 +12,7 @@ export default function Groups() {
     return (
       <>
         <CreateGroup />
-        <GroupList />
+        <GroupList currentUser={data.currentUser.id} />
       </>
     );
 }
