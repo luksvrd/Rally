@@ -37,3 +37,17 @@ export const ADD_DATE = gql`
     }
   }
 `;
+
+export const JOIN_GROUP = gql`
+  mutation AddMember($groupId: ID!, $userId: ID!) {
+    addMember(groupId: $groupId, userId: $userId) {
+      name
+      description
+      members {
+        username
+        id
+      }
+      iconFamily
+    }
+  }
+`;
