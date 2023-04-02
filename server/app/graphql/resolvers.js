@@ -9,7 +9,7 @@ function handleNoUser(msg) {
 const resolvers = {
   Query: {
     async currentUser(_, __, { user }) {
-      return user;
+      return await userController.getUserById(user.id);
     },
     async getOneUser(_, { userId }) {
       return await userController.getUserById(userId);
