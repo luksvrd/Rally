@@ -31,10 +31,21 @@ export default function Leaderboard() {
     // Find the habit object in the member's list of habits that matches the habit name
     const habit = member.habits.find((habit) => habit.name === habitName);
 
+    return {
+      username: member.username,
+      streak: habit.streak,
+    };
+  });
+
+  // Sort the memberListItems array in descending order of streak
+  memberListItems.sort((a, b) => b.streak - a.streak);
+
+  // Map over the sorted memberListItems and render a list item with their username and streak
+  const sortedMemberListItems = memberListItems.map((member) => {
     return (
       <li key={member.username} className="semi-t-card my-2 px-12 py-2 text-xl">
         <h3>{member.username}</h3>
-        <h3>{habit.streak}</h3>
+        <h3>{member.streak}</h3>
       </li>
     );
   });
@@ -44,7 +55,7 @@ export default function Leaderboard() {
       <h2 id="groups" className="profile-headers my-3">
         {group.name}
       </h2>
-      <ul>{memberListItems}</ul>
+      <ul>{sortedMemberListItems}</ul>
     </div>
   );
 }
