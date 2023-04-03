@@ -26,7 +26,7 @@ export default function Leaderboard() {
           className="semi-t-card my-2 px-12 py-2 text-xl"
         >
           <h3>{member.username}</h3>
-          <h3>{streak}</h3>
+          <h3>{streak} days</h3>
         </li>
       );
     });
