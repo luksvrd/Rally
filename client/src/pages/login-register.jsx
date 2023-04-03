@@ -22,11 +22,14 @@ export default function LoginRegister() {
     event.preventDefault();
     const fd = new FormData(event.target);
     const submission = Object.fromEntries(fd);
-    console.log(submission);
     if (isRegistering) {
-      register({ variables: { userData: submission } });
+      register({ variables: { userData: submission } }).then(() => {
+        window.location.href = "/user";
+      });
     } else {
-      login({ variables: submission });
+      login({ variables: submission }).then(() => {
+        window.location.href = "/user";
+      });
     }
   };
 
