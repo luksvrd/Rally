@@ -10,7 +10,7 @@ export default function User(props) {
   const groups = data?.currentUser.groups;
 
   const groupListItems = groups?.map((group) => (
-    <li key={group._id} className="semi-t-card my-2 px-12 py-2 text-xl">
+    <li key={group._id} className="semi-t-card my-2 px-2 py-2 text-xl">
       <Link to={`/leaderboard/${group.id}`}>{group.name}</Link>
     </li>
   ));
