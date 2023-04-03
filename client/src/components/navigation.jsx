@@ -14,7 +14,7 @@ export default function Navigation() {
         {token ? (
           <>
             <li>
-              <Link to="/habit">Habits</Link>
+              <Link to="/about">Home</Link>
             </li>
             <li>
               <Link to="/user">Profile</Link>
@@ -31,9 +31,6 @@ export default function Navigation() {
             <Link to="/Login">Login</Link>
           </li>
         )}
-        <li>
-          <Link to="/about">About</Link>
-        </li>
       </ul>
     </nav>
   );
