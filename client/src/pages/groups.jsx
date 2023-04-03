@@ -5,7 +5,6 @@ import { GET_GROUPS } from "../schema/queries";
 export default function Groups() {
   const groups = useQuery(GET_GROUPS);
   const groupData = groups?.data.getAllGroups;
-
   console.log(groupData);
   return (
     <>
