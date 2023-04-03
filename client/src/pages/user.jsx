@@ -9,7 +9,10 @@ export default function User(props) {
   const groups = data?.currentUser.groups;
 
   const groupListItems = groups?.map((group) => (
-    <li key={group._id} className="semi-t-card my-2 px-12 py-2 text-xl">
+    <li
+      key={group._id}
+      className="semi-t-card my-2 px-3 py-2 text-lg font-medium"
+    >
       <h3>{group.name}</h3>
     </li>
   ));
