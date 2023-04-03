@@ -4,7 +4,7 @@ export default function Footer() {
   const location = useLocation();
   const path = location.pathname;
   const isUserAboutOrGroups =
-    path === "/user" || path === "/groups" || path === "/about";
+    path === "/user" || path === "/groups" || path === "/about" || path === "/";
 
   return (
     <footer
