@@ -69,7 +69,7 @@ export default function LoginRegister() {
         />
         <button
           type="submit"
-          className="my-2 rounded-lg border-2 border-black bg-white px-6"
+          className="my-2 rounded-lg border-2 border-black bg-white px-6 drop-shadow-md"
         >
           {isRegistering ? "Register" : "Login"}
         </button>

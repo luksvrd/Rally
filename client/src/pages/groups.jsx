@@ -1,7 +1,8 @@
 import { useQuery } from "@apollo/client";
 import CreateGroup from "../components/create-group";
-import GroupsCard from "../components/group-card";
-import { GET_GROUPS } from "../schema/queries";
+import GroupList from "../components/group-list";
+import { CURRENT_USER } from "../schema/queries";
+
 export default function Groups() {
   const groups = useQuery(GET_GROUPS);
   const groupData = groups?.data.getAllGroups;
@@ -16,4 +17,5 @@ export default function Groups() {
       </div>
     </>
   );
+
 }

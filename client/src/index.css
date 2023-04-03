@@ -24,5 +24,9 @@ html {
 }
 
 .semi-t-card {
-  @apply rounded-md bg-white bg-opacity-25;
+  @apply rounded-md bg-white bg-opacity-30 drop-shadow-lg;
+}
+
+.checkbox {
+  @apply border-2 border-rally-purple checked:border-rally-blue checked:bg-rally-purple;
 }

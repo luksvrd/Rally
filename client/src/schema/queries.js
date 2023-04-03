@@ -29,10 +29,11 @@ export const GET_HABITS = gql`
 `;
 
 export const GET_GROUPS = gql`
-  query Query {
+  query GetAllGroups {
     getAllGroups {
       id
       name
+      description
     }
   }
 `;
