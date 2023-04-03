@@ -4,6 +4,13 @@ Monorepo for MERN (MongoDB, Express, React, Node) stack with Apollo GraphQL serv
 
 [Server](./server/README.md) | [Client](./client/README.md)
 
+## TODOs
+
+- Change the rendered icon on user's profile depending on streak (0-5 base, 5-10 bronze, 10-15 silver, 15+ gold)
+- Style leaderboard
+- Sort leaderboard by streak
+- tablet and desktop styling
+
 ## Known Bugs
 
 - Checking AND unchecking the habit checkbox in the user's profile will update the streak
