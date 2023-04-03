@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 import Habit from "../components/habit";
 import { CURRENT_USER } from "../schema/queries";
 
@@ -9,11 +10,8 @@ export default function User(props) {
   const groups = data?.currentUser.groups;
 
   const groupListItems = groups?.map((group) => (
-    <li
-      key={group._id}
-      className="semi-t-card my-2 px-3 py-2 text-lg font-medium"
-    >
-      <h3>{group.name}</h3>
+    <li key={group._id} className="semi-t-card my-2 px-12 py-2 text-xl">
+      <Link to={`/leaderboard/${group.id}`}>{group.name}</Link>
     </li>
   ));
 
