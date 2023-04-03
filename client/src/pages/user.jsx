@@ -5,7 +5,6 @@ import { CURRENT_USER } from "../schema/queries";
 
 export default function User(props) {
   const { loading, error, data } = useQuery(CURRENT_USER);
-  //   console.log(data);
 
   const groups = data?.currentUser.groups;
 
@@ -13,6 +12,18 @@ export default function User(props) {
     <li key={group._id} className="semi-t-card my-2 px-12 py-2 text-xl">
       <h3>{group.name}</h3>
     </li>
+  ));
+
+  const badges = groups?.map((group) => (
+    <div key={group._id} className="middle">
+      {/* template literal src string using group.iconFamily */}
+      <img
+        key={group._id}
+        src={`../src/icons/${group.iconFamily}.png`}
+        alt="badge"
+        className="icon-small"
+      />
+    </div>
   ));
 
   if (loading) return <p>Loading...</p>;
@@ -27,26 +38,7 @@ export default function User(props) {
         <div className="middle">
           <h2 className="profile-headers mb-1">Your Badges</h2>
           <div id="icons" className="grid grid-cols-3 place-items-center">
-            <img
-              src="../src/icons/reading1st.png"
-              alt="reading"
-              className="icon-small"
-            />
-            <img
-              src="../src/icons/walking.png"
-              alt="running"
-              className="icon-small"
-            />
-            <img
-              src="../src/icons/meditating3rd.png"
-              alt="meditation"
-              className="icon-small"
-            />
-            <img
-              src="../src/icons/water2nd.png"
-              alt="water"
-              className="icon-small"
-            />
+            {badges}
           </div>
         </div>
 
@@ -54,7 +46,9 @@ export default function User(props) {
           <h2 id="habits" className=" profile-headers mb-1 mt-3">
             Today's Goals
           </h2>
-          <Habit />
+          <div>
+            <Habit />
+          </div>
         </div>
 
         <div className="middle">

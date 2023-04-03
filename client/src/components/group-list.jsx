@@ -22,7 +22,7 @@ export default function GroupList({ currentUser }) {
       </div>
       <button
         type="button"
-        className="my-2 rounded-lg border-2 border-black bg-white px-5 font-semibold drop-shadow-md"
+        className="my-2 rounded-lg border-2 border-black bg-white px-5 font-semibold drop-shadow-md hover:animate-pulse"
         onClick={() =>
           addMember({
             variables: { groupId: group.id, userId: currentUser },
