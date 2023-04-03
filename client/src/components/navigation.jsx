@@ -28,7 +28,7 @@ export default function Navigation() {
           </>
         ) : (
           <li>
-            <Link to="/">Login</Link>
+            <Link to="/Login">Login</Link>
           </li>
         )}
         <li>
