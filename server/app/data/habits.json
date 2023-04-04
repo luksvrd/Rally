@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Read 10 pages daily",
+    "description": "Read 10 pages of a book or article each day to expand your knowledge and understanding."
+  },
+  {
+    "name": "Drink 8 glasses of water daily",
+    "description": "Drink at least 8 glasses of water each day to stay hydrated and promote overall health."
+  },
+  {
+    "name": "Exercise for 30 minutes daily",
+    "description": "Get at least 30 minutes of physical activity each day to improve your fitness and well-being."
+  },
+  {
+    "name": "Meditate for 10 minutes daily",
+    "description": "Take 10 minutes each day to meditate or practice mindfulness to reduce stress and promote relaxation."
+  },
+  {
+    "name": "Write in a journal daily",
+    "description": "Spend a few minutes each day writing in a journal to reflect on your thoughts, feelings, and experiences."
+  },
+  {
+    "name": "Practice gratitude daily",
+    "description": "Take a few minutes each day to think about the things in your life that you are grateful for."
+  },
+  {
+    "name": "Learn a new skill or hobby",
+    "description": "Spend time each day learning a new skill or hobby to expand your knowledge and pursue your interests."
+  },
+  {
+    "name": "Get enough sleep",
+    "description": "Get 7-8 hours of sleep each night to promote overall health and well-being."
+  },
+  {
+    "name": "Eat a healthy breakfast",
+    "description": "Start your day off right by eating a healthy and nutritious breakfast each morning."
+  },
+  {
+    "name": "Connect with friends and family",
+    "description": "Make time each day to connect with friends and family members to strengthen your relationships and social support network."
+  }
+]

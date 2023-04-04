@@ -1,15 +1,58 @@
+import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { Input } from "../components/form";
+import { LOGIN, REGISTER } from "../schema/mutations";
 
 export default function LoginRegister() {
   const [isRegistering, setIsRegistering] = useState(false);
 
+  const [register] = useMutation(REGISTER, {
+    onCompleted(data) {
+      localStorage.setItem("token", data.createUser.token);
+    },
+  });
+
+  const [login] = useMutation(LOGIN, {
+    onCompleted(data) {
+      localStorage.setItem("token", data.login.token);
+    },
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const fd = new FormData(event.target);
+    const submission = Object.fromEntries(fd);
+    if (isRegistering) {
+      register({ variables: { userData: submission } }).then(() => {
+        window.location.href = "/groups";
+      });
+    } else {
+      login({ variables: submission }).then(() => {
+        window.location.href = "/user";
+      });
+    }
+  };
+
   return (
-    <main>
-      <h2 className="text-center">
-        {isRegistering ? "Register a New Account" : "Login 2 Ur Account"}
+    <main className=" mx-9 my-20 rounded-md bg-white bg-opacity-25 py-2">
+      <h2 className="py-5 text-center text-lg font-bold">
+        {isRegistering ? "Register a New Account" : "Log in to your Account"}
       </h2>
-      <form className="flex flex-col items-center gap-y-2 px-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center gap-y-2 px-4"
+      >
+        {isRegistering ? (
+          <Input
+            type="text"
+            label="Email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        ) : (
+          <></>
+        )}
         <Input
           type="text"
           label="Username"
@@ -26,7 +69,7 @@ export default function LoginRegister() {
         />
         <button
           type="submit"
-          className="button mt-4 bg-green-500 hover:bg-green-300"
+          className="my-2 rounded-lg border-2 border-black bg-white px-6 drop-shadow-md"
         >
           {isRegistering ? "Register" : "Login"}
         </button>
@@ -35,7 +78,7 @@ export default function LoginRegister() {
           onClick={() => {
             setIsRegistering((prev) => !prev);
           }}
-          className="text-center text-sm text-gray-500 hover:text-gray-300"
+          className="text-center text-sm font-bold text-light-grey hover:scale-110"
         >
           {isRegistering ? "Already have an account?" : "Need to register?"}
         </button>
