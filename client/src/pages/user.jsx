@@ -50,7 +50,7 @@ export default function User(props) {
     return (
       <div key={group._id} className="middle">
         <img
-          className="icon-small"
+          className="icon-small animate-pulse"
           src={`../src/icons/${badgeArray[i]}.png`}
           alt="badge"
         />
