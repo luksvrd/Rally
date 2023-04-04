@@ -43,27 +43,38 @@ export default function Leaderboard() {
   // Map over the sorted memberListItems and render a list item with their username and streak
   const sortedMemberListItems = memberListItems.map((member) => {
     return (
-      <li key={member.username} className="flex border-b-2 border-black">
-        <h3>{member.username}</h3>
-        <h3>{member.streak}</h3>
-      </li>
+      <tr key={member.username}>
+        <td>{member.username}</td>
+        <td>{member.streak}</td>
+      </tr>
     );
   });
 
   return (
     <div className="middle">
-      <h2 id="groups" className="mb-2 mt-5 text-center text-4xl font-bold">
+      <h2 id="groups" className="mb-4 mt-10 text-center text-4xl font-bold">
         {group.name}
       </h2>
       <img
         src={`../src/icons/${group.iconFamily}.png`}
         alt="group icon"
-        className="w-16 drop-shadow-md"
+        className="mb-2 w-16 drop-shadow-md"
       />
-      <div className="middle semi-t-card">
-        <h3 className="font-audiowide text-2xl font-bold">Leaderboard</h3>
-        <ul>{sortedMemberListItems}</ul>
-      </div>
+      <table className="table-auto border-collapse border-2 border-rally-purple bg-white bg-opacity-50 text-center">
+        <tr>
+          <th
+            colSpan="2"
+            className="my-3 border-b-2 border-inherit font-audiowide text-2xl font-bold"
+          >
+            LeaderBoard
+          </th>
+        </tr>
+        <tr>
+          <th>Username</th>
+          <th>Streak</th>
+        </tr>
+        {sortedMemberListItems}
+      </table>
     </div>
   );
 }
