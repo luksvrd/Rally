@@ -1,11 +1,11 @@
 // import the logo png
-import Logo from "../icons/icons";
+import { logo } from "../icons/icons";
 
 export default function Header() {
   return (
     <header className="my-4 flex items-center justify-center">
       <img
-        src={Logo}
+        src={logo}
         alt="rally-logo"
         className="mx-1 w-8 rounded border md:w-10"
       />
