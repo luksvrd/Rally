@@ -26,6 +26,8 @@ export default function GroupList({ currentUser }) {
         onClick={() =>
           addMember({
             variables: { groupId: group.id, userId: currentUser },
+          }).then(() => {
+            window.location.href = "/user";
           })
         }
       >
