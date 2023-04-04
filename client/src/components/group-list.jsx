@@ -18,11 +18,11 @@ export default function GroupList({ currentUser }) {
     >
       <div>
         <h3 className="text-lg font-semibold">{group.name}</h3>
-        <h4 className="text-xs text-light-grey">{group.description}</h4>
+        <h4 className="text-xs text-gray-600">{group.description}</h4>
       </div>
       <button
         type="button"
-        className="my-2 rounded-lg border-2 border-black bg-white px-5 font-semibold drop-shadow-md hover:animate-pulse"
+        className="my-2 rounded-lg border-2 border-rally-purple bg-white px-5 font-semibold drop-shadow-md hover:border-rally-blue"
         onClick={() =>
           addMember({
             variables: { groupId: group.id, userId: currentUser },
