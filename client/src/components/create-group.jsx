@@ -155,7 +155,7 @@ export default function CreateGroup() {
         </div>
         <button
           type="submit"
-          className="my-2 rounded-lg border-2 border-black bg-white px-6 font-semibold drop-shadow-md"
+          className="my-2 rounded-lg border-2 border-black bg-white px-6 font-semibold drop-shadow-md hover:border-rally-purple"
         >
           Create Group
         </button>
