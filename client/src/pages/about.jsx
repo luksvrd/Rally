@@ -1,3 +1,5 @@
+import workoutIcon from "../icons/workout.png";
+
 /* eslint-disable react/no-unescaped-entities */
 export default function About() {
   return (
@@ -13,11 +15,7 @@ export default function About() {
       <div className="flex flex-col">
         <div className="flex justify-evenly pt-1">
           <div className="middle">
-            <img
-              src="../src/icons/workout.png"
-              alt="workout"
-              className="w-10"
-            />
+            <img src={workoutIcon} alt="workout" className="w-10" />
             <p className="text-xs text-light-grey">Base</p>
           </div>
           <div className="middle">
