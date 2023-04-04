@@ -6,8 +6,8 @@ import { CURRENT_USER } from "../schema/queries";
 export default function Groups() {
   const { loading, error, data } = useQuery(CURRENT_USER);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (loading) return <p className="text-center">Loading...</p>;
+  if (error) return <p className="text-center">Error :(</p>;
   else
     return (
       <>
