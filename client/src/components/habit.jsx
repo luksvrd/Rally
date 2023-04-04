@@ -41,7 +41,7 @@ export default function Habit() {
           <h3 className="text mx-2 font-semibold">{habit.name}</h3>
           <input
             type="checkbox"
-            className="border-2 border-rally-purple checked:border-rally-blue checked:bg-rally-purple"
+            className="cursor-pointer border-2 border-rally-purple checked:border-rally-blue checked:bg-rally-purple"
             // Calls the event handler function when the checkbox is clicked
             onClick={() => handleCheckboxClick(habit.id)}
             // Sets the checked state of the checkbox based on the isChecked state variable
