@@ -13,12 +13,12 @@ export default function Leaderboard() {
 
   if (loading) {
     // Render a loading indicator if the data is still being fetched
-    return <p>Loading...</p>;
+    return <p className="text-center">Loading...</p>;
   }
 
   if (error) {
     // Render an error message if there was an issue fetching the data
-    return <p>Error :(</p>;
+    return <p className="text-center">Error :(</p>;
   }
 
   // If the data has been fetched successfully, proceed with rendering the leaderboard
@@ -43,34 +43,62 @@ export default function Leaderboard() {
   // Map over the sorted memberListItems and render a list item with their username and streak
   const sortedMemberListItems = memberListItems.map((member) => {
     return (
-      <tr key={member.username}>
-        <td>{member.username}</td>
-        <td>{member.streak}</td>
+      <tr
+        key={member.username}
+        className="border-collapse border-b border-black"
+      >
+        <td className="border-collapse border-r border-black">
+          {member.username}
+        </td>
+        <td className="font-semibold">{member.streak}</td>
       </tr>
     );
   });
 
   return (
     <div className="middle">
-      <h2 id="groups" className="mb-4 mt-10 text-center text-4xl font-bold">
+      <h2
+        id="groups"
+        className="mb-6 mt-10 text-center text-4xl font-bold md:mb-10 md:mt-20 md:text-5xl lg:mb-16"
+      >
         {group.name}
       </h2>
-      <img
-        src={`../src/icons/${group.iconFamily}.png`}
-        alt="group icon"
-        className="mb-2 w-16 drop-shadow-md"
-      />
-      <table className="table-auto border-collapse border-2 border-rally-purple bg-white bg-opacity-50 text-center">
-        <tr>
+      <div className="h-15 w-100 flex">
+        <img
+          src={`../src/icons/${group.iconFamily}.png`}
+          alt="group icon"
+          className=" mr-2 w-8 animate-pulse drop-shadow-md md:mr-6 md:w-12 lg:w-16"
+        />
+        <img
+          src={`../src/icons/${group.iconFamily}3rd.png`}
+          alt="group icon"
+          className="mr-2 w-8 animate-pulse drop-shadow-md md:mr-6 md:w-12 lg:w-16"
+        />
+        <img
+          src={`../src/icons/${group.iconFamily}2nd.png`}
+          alt="group icon"
+          className="mr-2 w-8 animate-pulse drop-shadow-md md:mr-6 md:w-12 lg:w-16"
+        />
+        <img
+          src={`../src/icons/${group.iconFamily}1st.png`}
+          alt="group icon"
+          className="mr-2 w-8 animate-pulse drop-shadow-md md:mr-6 md:w-12 lg:w-16"
+        />
+      </div>
+      <p className=" mb-5 text-sm text-light-grey md:text-lg lg:mb-8">
+        Group Badges
+      </p>
+      <table className=" w-4/5 table-auto border-collapse border-2 border-black bg-white bg-opacity-50 text-center drop-shadow-md md:w-2/3">
+        <tr className="h-10">
           <th
             colSpan="2"
-            className="my-3 border-b-2 border-inherit font-audiowide text-2xl font-bold"
+            className="border-collapse border-b border-black font-audiowide text-2xl font-bold"
           >
             LeaderBoard
           </th>
         </tr>
-        <tr>
-          <th>Username</th>
+        <tr className="h-8 border-collapse border-b border-black">
+          <th className="border-collapse border-r border-black">Username</th>
           <th>Streak</th>
         </tr>
         {sortedMemberListItems}

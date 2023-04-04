@@ -50,7 +50,7 @@ export default function User(props) {
     return (
       <div key={group._id} className="middle">
         <img
-          className="icon-small"
+          className="mx-3 w-14 animate-pulse md:w-16"
           src={`../src/icons/${badgeArray[i]}.png`}
           alt="badge"
         />
@@ -63,35 +63,42 @@ export default function User(props) {
   else
     return (
       <div className="middle">
-        <p className="text-md mt-10 font-semibold">Welcome,</p>
-        <h1 id="username" className="mb-10 text-4xl font-bold drop-shadow">
+        <p className="text-md mt-10 font-semibold md:text-lg">Welcome,</p>
+        <h1
+          id="username"
+          className="mb-10 text-4xl font-bold drop-shadow md:text-6xl"
+        >
           {data.currentUser.username}
         </h1>
 
         <div className="middle">
-          <h2 className="profile-headers mb-1">Your Badges</h2>
+          <h2 className="profile-headers mb-1 md:text-2xl">Your Badges</h2>
           <div
             id="icons"
-            className="m-1 grid grid-cols-3 place-content-center place-items-center"
+            className="m-1 grid grid-cols-3 place-content-center place-items-center md:grid-cols-5"
           >
             {badges}
           </div>
         </div>
-
-        <div className="middle mb-2 mt-3 w-4/5">
-          <h2 id="habits" className=" profile-headers mb-1 mt-4">
-            Today's Goals
-          </h2>
-          <div>
-            <Habit />
+        <div className="middle md:flex-row">
+          <div className="middle mx-4 mb-2 mt-3">
+            <h2 id="habits" className=" profile-headers mb-1 mt-4 md:text-2xl">
+              Today's Goals
+            </h2>
+            <div>
+              <Habit />
+            </div>
           </div>
-        </div>
 
-        <div className="middle">
-          <h2 id="groups" className="profile-headers mb-1 mt-4">
-            Groups
-          </h2>
-          <ul className="">{groupListItems}</ul>
+          <div className="middle">
+            <h2
+              id="groups"
+              className="profile-headers mb-1 mt-4 md:mt-0 md:text-2xl"
+            >
+              Groups
+            </h2>
+            <ul className="">{groupListItems}</ul>
+          </div>
         </div>
       </div>
     );

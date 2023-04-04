@@ -17,6 +17,14 @@ module.exports = {
         audiowide: ["Audiowide", "cursive"],
         montserrat: ["Montserrat", "sans-serif"],
       },
+      // extend the pulse animation
+      keyframes: {
+        pulse: {
+          "50%": {
+            opacity: 0.85,
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

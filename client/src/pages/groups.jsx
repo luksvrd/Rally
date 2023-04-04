@@ -11,8 +11,10 @@ export default function Groups() {
   else
     return (
       <>
-        <CreateGroup />
-        <GroupList currentUser={data.currentUser} />
+        <section className="middle lg:flex-row">
+          <CreateGroup />
+          <GroupList currentUser={data.currentUser} />
+        </section>
       </>
     );
 }
