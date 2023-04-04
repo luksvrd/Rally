@@ -65,6 +65,7 @@ export const GET_ONE_GROUP = gql`
     getOneGroup(groupId: $groupId) {
       name
       description
+      iconFamily
       members {
         username
         habits {

@@ -10,35 +10,44 @@ export default function About() {
         based on your personal streaks.
       </p>
       <h3 className="pt-6 font-audiowide text-xl">Badges</h3>
-      <div className="flex justify-evenly pt-1">
-        <div className="middle">
-          <img src="../src/icons/workout.png" alt="workout" className="w-10" />
-          <p className="text-xs text-light-grey">Base</p>
+      <div className="flex flex-col">
+        <div className="flex justify-evenly pt-1">
+          <div className="middle">
+            <img
+              src="../src/icons/workout.png"
+              alt="workout"
+              className="w-10"
+            />
+            <p className="text-xs text-light-grey">Base</p>
+          </div>
+          <div className="middle">
+            <img
+              src="../src/icons/workout3rd.png"
+              alt="bronze workout"
+              className="w-10"
+            />
+            <p className="text-xs text-light-grey">5 days</p>
+          </div>
+          <div className="middle">
+            <img
+              src="../src/icons/workout2nd.png"
+              alt="silver workout"
+              className="w-10"
+            />
+            <p className="text-xs text-light-grey">10 days</p>
+          </div>
+          <div className="middle">
+            <img
+              src="../src/icons/workout1st.png"
+              alt="gold workout"
+              className="w-10"
+            />
+            <p className="text-xs text-light-grey">15+ days</p>
+          </div>
         </div>
-        <div className="middle">
-          <img
-            src="../src/icons/workout3rd.png"
-            alt="bronze workout"
-            className="w-10"
-          />
-          <p className="text-xs text-light-grey">5 days</p>
-        </div>
-        <div className="middle">
-          <img
-            src="../src/icons/workout2nd.png"
-            alt="silver workout"
-            className="w-10"
-          />
-          <p className="text-xs text-light-grey">10 days</p>
-        </div>
-        <div className="middle">
-          <img
-            src="../src/icons/workout1st.png"
-            alt="gold workout"
-            className="w-10"
-          />
-          <p className="text-xs text-light-grey">15+ days</p>
-        </div>
+        <p className="py-1 text-sm">
+          As your streak grows, your badges will change!
+        </p>
       </div>
       <h3 className="pt-6 font-audiowide text-xl">How to use Rally</h3>
       <p className="text-middle pt-1">
