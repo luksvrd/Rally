@@ -66,10 +66,10 @@ View your streaks and stats for each habit
 
 ## Questions
 
-If you have any questions about the repo, open an issue at https://github.com/luksvrd?tab=repositories. You can also find more of our work at our respective Github Repositories:
+If you have any questions about the repo, open an [issue](https://github.com/luksvrd?tab=repositories). You can also find more of our work at our respective Github Repositories:
 
 - [Elliot Baynes](https://github.com/eabaynes)
-- [Ellie Walsch](https://github.com/brittanyb89)
+- [Ellie Walsch](https://github.com/EllieWalsch)
 - [Nhat Nguyen](https://github.com/nhatwin)
 - [Lukas Virden](https://github.com/luksvrd)
 - [Mason Neale](https://github.com/masonMO25)
