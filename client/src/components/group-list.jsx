@@ -6,6 +6,7 @@ import { GET_GROUPS } from "../schema/queries";
 export default function GroupList({ currentUser }) {
   const { data } = useQuery(GET_GROUPS);
   const [addMember] = useMutation(JOIN_GROUP);
+  const userGroups = currentUser.groups;
 
   const groups = data?.getAllGroups;
 
@@ -39,7 +40,7 @@ export default function GroupList({ currentUser }) {
       <h2 id="groups" className="profile-headers mb-2 mt-5">
         All Groups
       </h2>
-      <ul>{groupListItems}</ul>
+      <ul>{allGroupsThatUserIsNotIn}</ul>
     </div>
   );
 }

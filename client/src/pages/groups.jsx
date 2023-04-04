@@ -13,7 +13,7 @@ export default function Groups() {
       <>
         <section className="middle lg:flex-row">
           <CreateGroup />
-          <GroupList currentUser={data.currentUser.id} />
+          <GroupList currentUser={data.currentUser} />
         </section>
       </>
     );
