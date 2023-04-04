@@ -33,7 +33,11 @@ import Water1st from "./water1st.png";
 import Water2nd from "./water2nd.png";
 import Water3rd from "./water3rd.png";
 
+import Logo from "./rally-logo.png";
+
 // export the icons in groups of 4
+
+export const logo = Logo;
 
 export const workoutIcons = [WorkoutBase, Workout3rd, Workout2nd, Workout1st];
 
