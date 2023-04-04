@@ -12,7 +12,7 @@ export default function Groups() {
     return (
       <>
         <CreateGroup />
-        <GroupList currentUser={data.currentUser} />
+        <GroupList currentUser={data.currentUser.id} />
       </>
     );
 }
