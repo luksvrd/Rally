@@ -59,3 +59,20 @@ export const GET_ONE_USER = gql`
     }
   }
 `;
+
+export const GET_ONE_GROUP = gql`
+  query GetOneGroup($groupId: ID!) {
+    getOneGroup(groupId: $groupId) {
+      name
+      description
+      iconFamily
+      members {
+        username
+        habits {
+          name
+          streak
+        }
+      }
+    }
+  }
+`;

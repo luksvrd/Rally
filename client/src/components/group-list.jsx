@@ -17,6 +17,7 @@ export default function GroupList({ currentUser }) {
       <li
         key={group.id}
         className="semi-t-card mx-5 mb-2 flex justify-between px-2"
+
       >
         <div>
           <h3 className="text-lg font-semibold">{group.name}</h3>
@@ -26,10 +27,12 @@ export default function GroupList({ currentUser }) {
           type="button"
           className="my-2 rounded-lg border-2 border-black bg-white px-5 font-semibold drop-shadow-md hover:animate-pulse"
           onClick={() =>
-            addMember({
-              variables: { groupId: group.id, userId: currentUser.id },
-            })
-          }
+          addMember({
+            variables: { groupId: group.id, userId: currentUser },
+          }).then(() => {
+            window.location.href = "/user";
+          })
+        }
         >
           Join
         </button>

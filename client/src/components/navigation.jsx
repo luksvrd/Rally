@@ -10,7 +10,7 @@ export default function Navigation() {
 
   return (
     <nav className="bg-transparent">
-      <ul className="flex justify-between text-light-grey">
+      <ul className="flex justify-evenly text-light-grey">
         {token ? (
           <>
             <li>

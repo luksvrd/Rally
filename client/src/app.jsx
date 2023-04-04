@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layouts/layout";
-import { About, Groups, Login, User } from "./pages";
+import { About, Groups, Leaderboard, Login, User } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +11,7 @@ const router = createBrowserRouter([
       { path: "/user", element: <User /> },
       { path: "/groups", element: <Groups /> },
       { path: "/login", element: <Login /> },
+      { path: "/leaderboard/:groupId", element: <Leaderboard /> },
     ],
   },
 ]);
