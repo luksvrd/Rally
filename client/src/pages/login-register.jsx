@@ -24,7 +24,7 @@ export default function LoginRegister() {
     const submission = Object.fromEntries(fd);
     if (isRegistering) {
       register({ variables: { userData: submission } }).then(() => {
-        window.location.href = "/user";
+        window.location.href = "/groups";
       });
     } else {
       login({ variables: submission }).then(() => {
