@@ -31,7 +31,9 @@ async function init() {
   // Specify the path where we'd like to mount our server
   app.use(
     "/",
-    cors(),
+    cors({
+      origin: "https://dulcet-cascaron-584908.netlify.app/", // Update with your Netlify website domain
+    }),
     express.json(),
     decodeToken,
     expressMiddleware(server, {
