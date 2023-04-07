@@ -11,7 +11,7 @@ import App from "./app";
 import "./index.css";
 
 const httpLink = createHttpLink({
-  uri: "https://rally.herokuapp.com/" || "http://localhost:4000/",
+  uri: import.meta.env.VITE_LIVE_APOLLO_SERVER || "http://localhost:4000/",
 });
 
 const authLink = setContext((_, { headers }) => {
