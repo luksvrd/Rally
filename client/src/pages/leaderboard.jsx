@@ -46,7 +46,7 @@ export default function Leaderboard() {
     if (iconFamily === "meditating") return meditatingIcons;
   };
 
-  console.log(iconFamilyIcons(iconFamily)[0]);
+  // console.log(iconFamilyIcons(iconFamily)[0]);
 
   // Map over each member and render a list item with their username and streak
   const memberListItems = members.map((member) => {
