@@ -32,7 +32,7 @@ async function init() {
   app.use(
     "/",
     cors({
-      origin: "https://dulcet-cascaron-584908.netlify.app/", // Update with your Netlify website domain
+      origin: "https://rally.herokuapp.com/", // Update with your Netlify website domain
     }),
     express.json(),
     decodeToken,
