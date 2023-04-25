@@ -31,9 +31,8 @@ async function init() {
   // Specify the path where we'd like to mount our server
   app.use(
     "/",
-    cors({
-      origin: "https://rally.herokuapp.com/", // Update with your Netlify website domain
-    }),
+    cors(),
+    // {origin: "https://rally.herokuapp.com/", // Update with your Netlify website domain}
     express.json(),
     decodeToken,
     expressMiddleware(server, {
