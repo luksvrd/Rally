@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node app/index.js",
     "dev": "node --watch app/index.js",
-    "serve": "node app/index.js",
-    "start": "node app/index.js"
+    "serve": "node app/index.js"
   },
   "keywords": [],
   "author": "",
