@@ -6,7 +6,11 @@ const init = async () => {
   mongoose
     .connect(
       // ⚠️ ASSUMPTION: You have included the database name in the URL.
-      `${config.mongoURL}`
+      `${config.mongoURL}`,
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
     )
     .then(() => {
       console.info("Connected to MongoDB");
