@@ -4,7 +4,8 @@
     "client": "cd client && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "install": "cd client && npm install && cd ../server && npm install",
-    "server": "cd server && npm run dev"
+    "server": "cd server && npm run dev",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
   },
   "keywords": [],
   "author": "",
