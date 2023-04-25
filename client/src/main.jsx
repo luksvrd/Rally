@@ -28,6 +28,7 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   uri: import.meta.env.VITE_LIVE_APOLLO_SERVER,
+  // Forcing use of heroku backend rather than localhost
   // || "http://localhost:4000/",
   cache: new InMemoryCache(),
 });
