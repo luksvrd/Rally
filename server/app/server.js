@@ -4,6 +4,7 @@ import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHt
 import cors from "cors";
 import express from "express";
 import http from "http";
+import path from "path";
 import config from "./config.js";
 import { resolvers, typeDefs } from "./graphql/index.js";
 import decodeToken from "./middleware/decode-token.js";
@@ -31,7 +32,9 @@ async function init() {
   // Specify the path where we'd like to mount our server
   app.use(
     "/",
-    cors(),
+    cors({
+    }),
+    express.static(path.resolve(__dirname, "../client/dist"))
     express.json(),
     decodeToken,
     expressMiddleware(server, {
@@ -41,6 +44,12 @@ async function init() {
         };
       },
     })
+  );
+
+  app.get(
+    "*", function (req, res) {
+      response.sendFile(path.resolve(__dirname, "../client/dist/index.html"));
+    }
   );
 
   // Modified server startup

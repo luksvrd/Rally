@@ -1,5 +1,11 @@
+import { workoutIcons } from "../icons/icons";
 /* eslint-disable react/no-unescaped-entities */
 export default function About() {
+  const workoutBase = workoutIcons[0];
+  const workoutBronze = workoutIcons[1];
+  const workoutSilver = workoutIcons[2];
+  const workoutGold = workoutIcons[3];
+
   return (
     <main className="px-4 pt-14 text-center md:px-16 md:pt-24 lg:px-20 lg:pt-14">
       <h2 className="pb-5 font-audiowide text-3xl">Welcome to Rally</h2>
@@ -13,35 +19,19 @@ export default function About() {
       <div className="flex flex-col">
         <div className="flex justify-evenly pt-1">
           <div className="middle">
-            <img
-              src="../src/icons/workout.png"
-              alt="workout"
-              className="w-10"
-            />
+            <img src={workoutBase} alt="workout" className="w-10" />
             <p className="text-xs text-light-grey">Base</p>
           </div>
           <div className="middle">
-            <img
-              src="../src/icons/workout3rd.png"
-              alt="bronze workout"
-              className="w-10"
-            />
+            <img src={workoutBronze} alt="bronze workout" className="w-10" />
             <p className="text-xs text-light-grey">5 days</p>
           </div>
           <div className="middle">
-            <img
-              src="../src/icons/workout2nd.png"
-              alt="silver workout"
-              className="w-10"
-            />
+            <img src={workoutSilver} alt="silver workout" className="w-10" />
             <p className="text-xs text-light-grey">10 days</p>
           </div>
           <div className="middle">
-            <img
-              src="../src/icons/workout1st.png"
-              alt="gold workout"
-              className="w-10"
-            />
+            <img src={workoutGold} alt="gold workout" className="w-10" />
             <p className="text-xs text-light-grey">15+ days</p>
           </div>
         </div>

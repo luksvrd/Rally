@@ -1,5 +1,14 @@
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
+import {
+  learningIcons,
+  meditatingIcons,
+  readingIcons,
+  sleepingIcons,
+  walkingIcons,
+  waterIcons,
+  workoutIcons,
+} from "../icons/icons";
 import { GET_ONE_GROUP } from "../schema/queries";
 
 export default function Leaderboard() {
@@ -25,6 +34,19 @@ export default function Leaderboard() {
   const group = data.getOneGroup;
   const members = group.members;
   const habitName = group.description;
+  const iconFamily = group.iconFamily;
+  // check the iconFamily and return the appropriate icon family
+  const iconFamilyIcons = (iconFamily) => {
+    if (iconFamily === "workout") return workoutIcons;
+    if (iconFamily === "reading") return readingIcons;
+    if (iconFamily === "sleeping") return sleepingIcons;
+    if (iconFamily === "learning") return learningIcons;
+    if (iconFamily === "walking") return walkingIcons;
+    if (iconFamily === "water") return waterIcons;
+    if (iconFamily === "meditating") return meditatingIcons;
+  };
+
+  // console.log(iconFamilyIcons(iconFamily)[0]);
 
   // Map over each member and render a list item with their username and streak
   const memberListItems = members.map((member) => {
@@ -65,22 +87,22 @@ export default function Leaderboard() {
       </h2>
       <div className="h-15 w-100 flex">
         <img
-          src={`../src/icons/${group.iconFamily}.png`}
+          src={iconFamilyIcons(iconFamily)[0]}
           alt="group icon"
           className=" mr-2 w-8 animate-pulse drop-shadow-md md:mr-6 md:w-12 lg:w-16"
         />
         <img
-          src={`../src/icons/${group.iconFamily}3rd.png`}
+          src={iconFamilyIcons(iconFamily)[1]}
           alt="group icon"
           className="mr-2 w-8 animate-pulse drop-shadow-md md:mr-6 md:w-12 lg:w-16"
         />
         <img
-          src={`../src/icons/${group.iconFamily}2nd.png`}
+          src={iconFamilyIcons(iconFamily)[2]}
           alt="group icon"
           className="mr-2 w-8 animate-pulse drop-shadow-md md:mr-6 md:w-12 lg:w-16"
         />
         <img
-          src={`../src/icons/${group.iconFamily}1st.png`}
+          src={iconFamilyIcons(iconFamily)[3]}
           alt="group icon"
           className="mr-2 w-8 animate-pulse drop-shadow-md md:mr-6 md:w-12 lg:w-16"
         />
