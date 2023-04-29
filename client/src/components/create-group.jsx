@@ -28,9 +28,7 @@ export default function CreateGroup() {
     <div className="middle semi-t-card mx-5 mt-5 py-5">
       <h2 className="mb-1 text-xl font-bold">Create a Group</h2>
       <form
-        onSubmit={handleSubmit.then(() => {
-          window.location.href = "/user";
-        })}
+        onSubmit={handleSubmit}
         className="flex flex-col items-center gap-y-2 px-4"
       >
         <Input
