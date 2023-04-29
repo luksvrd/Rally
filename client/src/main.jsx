@@ -11,8 +11,7 @@ import App from "./app";
 import "./index.css";
 
 const httpLink = createHttpLink({
-  uri: import.meta.env.VITE_LIVE_APOLLO_SERVER,
-  // || "http://localhost:4000/",
+  uri: "http://rally2.herokuapp.com/",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -27,7 +26,8 @@ const authLink = setContext((_, { headers }) => {
 // TODO: Set up Apollo Client
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  uri: import.meta.env.VITE_LIVE_APOLLO_SERVER,
+
+  uri: "http://rally2.herokuapp.com/",
   // Forcing use of heroku backend rather than localhost
   // || "http://localhost:4000/",
   cache: new InMemoryCache(),
