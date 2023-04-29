@@ -11,7 +11,7 @@ import App from "./app";
 import "./index.css";
 
 const httpLink = createHttpLink({
-  uri: "http://rally2.herokuapp.com/",
+  uri: "https://rally2.herokuapp.com/",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -27,7 +27,7 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
 
-  uri: "http://rally2.herokuapp.com/",
+  uri: "https://rally2.herokuapp.com/",
   // Forcing use of heroku backend rather than localhost
   // || "http://localhost:4000/",
   cache: new InMemoryCache(),
