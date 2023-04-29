@@ -22,7 +22,11 @@ export default function CreateGroup() {
     const radioId = radio.id;
     submission.iconFamily = radioId;
     const id = currentUser.data.currentUser.id;
-    createGroup({ variables: { userId: id, groupData: submission } });
+    createGroup({ variables: { userId: id, groupData: submission } }).then(
+      () => {
+        window.location.href = "/user";
+      }
+    );
   };
   return (
     <div className="middle semi-t-card mx-5 mt-5 py-5">
